@@ -14,8 +14,10 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
   const options = useMemo<LenisOptions>(
     () => ({
       autoRaf: true,
-      lerp: 0.095, // Subtle, natural inertia — continuous, responsive, never laggy
-      wheelMultiplier: 1, // Natural 1:1 wheel input ratio
+      // Tuned to 0.062 to extend the kinetic decay tail: creates a silky, subtle lingering movement
+      // that continues to glide smoothly even after the scroll wheel has come to rest.
+      lerp: 0.062,
+      wheelMultiplier: 1.15, // Calibrated momentum impulse so the lingering drift carries through
       touchMultiplier: 1.0,
       smoothWheel: true,
       syncTouch: false, // 100% native touch scrolling on mobile (no gesture hijacking)
