@@ -51,3 +51,50 @@ html.lenis body {
   background-color: #3E1522;
   color: #FAF8F5;
 }
+
+/* ==========================================================================
+   Swup.js Transition Styles
+   ========================================================================== */
+.transition-fade {
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  will-change: opacity, transform;
+}
+
+#swup-destinations.is-animating .transition-fade,
+#swup-destinations.is-leaving .transition-fade,
+.is-animating .transition-fade,
+.is-leaving .transition-fade {
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+}
+
+#swup-destinations.is-rendering .transition-fade,
+.is-rendering .transition-fade {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered delay for editorial details */
+.transition-fade-delayed {
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.04s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.04s;
+  opacity: 1;
+  transform: translateY(0);
+  will-change: opacity, transform;
+}
+
+#swup-destinations.is-animating .transition-fade-delayed,
+#swup-destinations.is-leaving .transition-fade-delayed,
+.is-animating .transition-fade-delayed,
+.is-leaving .transition-fade-delayed {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+#swup-destinations.is-rendering .transition-fade-delayed,
+.is-rendering .transition-fade-delayed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
