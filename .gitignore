@@ -33,3 +33,12 @@ next-env.d.ts
 
 # superpowers internal scratch
 .superpowers/
+
+# Agent context & internal tooling
+AGENTS.md
+CLAUDE.md
+PRODUCT.md
+DESIGN.md
+.impeccable/
+docs/superpowers/
+
