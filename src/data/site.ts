@@ -83,6 +83,6 @@ export const siteConfig = {
     { label: "Destinations", href: "/#destinations" },
     { label: "Disciplines", href: "/services" },
     { label: "The House", href: "/about" },
-    { label: "VIP Concierge", href: "/contact" },
+    { label: "Enquire Now", href: "/#inquiry" },
   ],
 };

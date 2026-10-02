@@ -46,34 +46,35 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {siteConfig.navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-xs uppercase tracking-[0.2em] text-charcoal/80 hover:text-burgundy transition-colors relative py-1 group font-medium"
-            >
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-burgundy transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
+          {siteConfig.navLinks.map((link, idx) => {
+            const isLast = idx === siteConfig.navLinks.length - 1;
+            if (isLast) {
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-xs uppercase tracking-[0.18em] hover:bg-burgundy-light hover:border-burgundy-light transition-all duration-300 shadow-sm font-medium ml-2"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne-light"></span>
+                  </span>
+                  <span>{link.label}</span>
+                </Link>
+              );
+            }
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-xs uppercase tracking-[0.2em] text-charcoal/80 hover:text-burgundy transition-colors relative py-1 group font-medium"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-burgundy transition-all duration-300 group-hover:w-full" />
+              </Link>
+            );
+          })}
         </nav>
-
-        {/* Direct Founder WhatsApp Action */}
-        <div className="hidden md:flex items-center space-x-4">
-          <a
-            href={directWhatsAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-4 py-2 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-xs uppercase tracking-[0.15em] hover:bg-burgundy-light hover:border-burgundy-light transition-all duration-300 shadow-sm"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne-light"></span>
-            </span>
-            <MessageCircle className="w-3.5 h-3.5 text-champagne-light" />
-            <span>Speak with Gourav</span>
-          </a>
-        </div>
 
         {/* Mobile Menu Button */}
         <button
