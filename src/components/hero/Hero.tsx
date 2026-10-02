@@ -27,31 +27,31 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-42 scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover object-center opacity-80 scale-100 transition-transform duration-1000 ease-out"
         />
-        {/* Layered Luxury Light Scenography Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-alabaster via-alabaster/80 to-alabaster/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-alabaster/85 via-transparent to-alabaster/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(238,223,205,0.4),_transparent_70%)]" />
+        {/* Balanced Scenography Vignette: Preserves image clarity while framing typography */}
+        <div className="absolute inset-0 bg-gradient-to-t from-alabaster via-alabaster/25 to-alabaster/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-alabaster/45 via-transparent to-alabaster/45" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(250,248,245,0.48)_0%,_transparent_75%)]" />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
         {/* Editorial Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-champagne-border/50 bg-white/90 backdrop-blur-md text-[11px] uppercase tracking-[0.3em] text-burgundy mb-8 shadow-sm">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-champagne-border/50 bg-white/95 backdrop-blur-md text-[11px] uppercase tracking-[0.3em] text-burgundy mb-8 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-rosegold" />
           <span className="font-medium">Haute-Couture Wedding Production</span>
         </div>
 
         {/* Central Thesis Headline */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-charcoal-deep max-w-4xl leading-[1.14] mb-6">
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-charcoal-deep max-w-4xl leading-[1.14] mb-6 drop-shadow-2xs">
           Crafting Extraordinary Weddings Where{" "}
           <span className="italic font-normal text-burgundy">Royalty</span> Meets{" "}
           <span className="italic font-normal text-rosegold">Emotion.</span>
         </h1>
 
         {/* Supporting Narrative */}
-        <p className="max-w-2xl text-sm sm:text-base md:text-lg text-charcoal-muted font-light leading-relaxed mb-10 tracking-wide">
+        <p className="max-w-2xl text-sm sm:text-base md:text-lg text-charcoal-deep/85 font-light leading-relaxed mb-10 tracking-wide">
           From the regal palace courtyards of Jaipur and Udaipur to the ancient wilderness of Jim Corbett and sacred riverbanks of Rishikesh — every celebration is personally curated and masterminded by Gourav.
         </p>
 
