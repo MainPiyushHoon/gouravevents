@@ -20,10 +20,13 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       root
       options={{
         autoRaf: true,
-        lerp: 0.1,
-        duration: 1.2,
-        wheelMultiplier: 1,
-        easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+        duration: 1.8, // Stately, longer transition to prevent fast abrupt rushes
+        wheelMultiplier: 0.65, // Calibrated distance per wheel tick so content doesn't fly past
+        touchMultiplier: 1.2,
+        smoothWheel: true,
+        syncTouch: false,
+        // Quartic ease-out: starts gently and softly decelerates, eliminating the sudden 50% jump
+        easing: (t) => 1 - Math.pow(1 - t, 4),
       }}
     >
       {children}
