@@ -15,7 +15,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     () => ({
       autoRaf: true,
       lerp: 0.095, // Subtle, natural inertia — continuous, responsive, never laggy
-      wheelMultiplier: 1.0, // Natural 1:1 wheel input ratio
+      wheelMultiplier: 1, // Natural 1:1 wheel input ratio
       touchMultiplier: 1.0,
       smoothWheel: true,
       syncTouch: false, // 100% native touch scrolling on mobile (no gesture hijacking)
