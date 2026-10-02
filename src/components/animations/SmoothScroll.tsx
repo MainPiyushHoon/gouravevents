@@ -1,23 +1,33 @@
 "use client";
 
-import { useMemo, type ReactNode } from "react";
-import { ReactLenis } from "lenis/react";
+import { useEffect, useMemo, type ReactNode } from "react";
+import { ReactLenis, useLenis } from "lenis/react";
 import type { LenisOptions } from "lenis";
 
+function LenisGlobalAttacher() {
+  const lenis = useLenis();
+  useEffect(() => {
+    if (typeof window !== "undefined" && lenis) {
+      (window as any).lenisInstance = lenis;
+    }
+  }, [lenis]);
+  return null;
+}
+
 export default function SmoothScroll({ children }: { children: ReactNode }) {
-  // Configured to fulfill exact smooth-scrolling requirements:
-  // 1. Subtle, natural inertia: continuous rather than mechanical steps
-  // 2. Not over-dampened: responsive 1:1 wheelMultiplier, no sluggish lag
-  // 3. Native touch scrolling preserved on mobile: syncTouch is false
-  // 4. Accessible & compliant: keyboard navigation and prefers-reduced-motion respected
-  // 5. In-page anchor navigation: smoothly resolved via anchors: true
+  // Exact implementation tracked from https://theweddingco.in/:
+  // - autoRaf: true
+  // - lerp: 0.1
+  // - duration: 1.2
+  // - wheelMultiplier: 1
+  // - easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x))
   const options = useMemo<LenisOptions>(
     () => ({
       autoRaf: true,
-      // Tuned to 0.062 to extend the kinetic decay tail: creates a silky, subtle lingering movement
-      // that continues to glide smoothly even after the scroll wheel has come to rest.
-      lerp: 0.062,
-      wheelMultiplier: 1.15, // Calibrated momentum impulse so the lingering drift carries through
+      duration: 1.2,
+      lerp: 0.1,
+      wheelMultiplier: 1,
+      easing: (x: number) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
       touchMultiplier: 1.0,
       smoothWheel: true,
       syncTouch: false, // 100% native touch scrolling on mobile (no gesture hijacking)
@@ -30,7 +40,9 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
   return (
     <ReactLenis root options={options}>
+      <LenisGlobalAttacher />
       {children}
     </ReactLenis>
   );
 }
+
