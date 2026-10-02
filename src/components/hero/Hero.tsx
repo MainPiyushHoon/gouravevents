@@ -89,9 +89,9 @@ export default function Hero() {
         </div>
 
         {/* Gentle Scroll Indicator */}
-        <div className="mt-8 flex flex-col items-center gap-2 text-taupe/60 hover:text-champagne transition-colors">
+        <div className="mt-8 flex flex-col items-center gap-2 text-taupe/60 hover:text-champagne transition-colors group">
           <span className="text-[10px] uppercase tracking-[0.3em]">Discover The Monograph</span>
-          <ArrowDown className="w-4 h-4 animate-bounce text-rosegold/70" />
+          <ArrowDown className="w-4 h-4 text-rosegold/70 transition-transform duration-500 group-hover:translate-y-1" />
         </div>
       </div>
     </section>
