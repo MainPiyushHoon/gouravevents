@@ -109,12 +109,11 @@ export default function DestinationsShowcase() {
               <button
                 key={dest.id}
                 onClick={() => handleDestinationChange(dest.id)}
-                disabled={isTransitioning}
-                className={`px-6 py-3 rounded-full text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-full text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   isActive
                     ? "bg-burgundy text-ivory font-medium shadow-md shadow-burgundy/20 scale-105"
                     : "border border-champagne-border/50 text-charcoal/80 hover:border-burgundy hover:text-burgundy bg-white shadow-sm"
-                } ${isTransitioning ? "cursor-wait opacity-90" : "cursor-pointer"}`}
+                }`}
               >
                 <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-champagne-light" : "text-rosegold"}`} />
                 <span>{dest.name}</span>
