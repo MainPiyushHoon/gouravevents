@@ -89,6 +89,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/destinations"
+                  className="text-xs text-ivory/80 hover:text-champagne-light transition-colors"
+                >
+                  Sacred Destinations
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/services"
                   className="text-xs text-ivory/80 hover:text-champagne-light transition-colors"
                 >
@@ -105,10 +113,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
-                  className="text-xs text-ivory/80 hover:text-champagne-light transition-colors"
+                  href="/enquire"
+                  className="text-xs text-ivory/80 hover:text-champagne-light transition-colors font-medium text-champagne-light"
                 >
-                  VIP Concierge & Inquiries
+                  Enquire Now
                 </Link>
               </li>
             </ul>

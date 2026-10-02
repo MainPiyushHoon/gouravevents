@@ -80,9 +80,9 @@ export const siteConfig = {
   },
   navLinks: [
     { label: "Weddings", href: "/weddings" },
-    { label: "Destinations", href: "/#destinations" },
+    { label: "Destinations", href: "/destinations" },
     { label: "Disciplines", href: "/services" },
     { label: "The House", href: "/about" },
-    { label: "Enquire Now", href: "/#inquiry" },
+    { label: "Enquire Now", href: "/enquire" },
   ],
 };

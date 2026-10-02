@@ -88,15 +88,15 @@ export default function Hero() {
           <span className="hover:text-burgundy transition-colors">Rishikesh</span>
         </div>
 
-        {/* Gentle Scroll Indicator */}
-        <a
-          href="#destinations"
+        {/* Gentle Destinations Pathway */}
+        <Link
+          href="/destinations"
           className="mt-8 flex flex-col items-center gap-2 text-taupe/70 hover:text-burgundy transition-colors group cursor-pointer focus:outline-none focus:ring-1 focus:ring-burgundy/40 rounded-lg px-3 py-1"
-          aria-label="Scroll to destinations section"
+          aria-label="Discover destinations"
         >
           <span className="text-[10px] uppercase tracking-[0.3em]">Discover The Monograph</span>
           <ArrowDown className="w-4 h-4 text-rosegold transition-transform duration-500 group-hover:translate-y-1" />
-        </a>
+        </Link>
       </div>
     </section>
   );
