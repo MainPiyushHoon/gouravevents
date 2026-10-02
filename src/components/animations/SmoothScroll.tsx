@@ -1,39 +1,32 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
-import Lenis from "lenis";
+import { useEffect, useRef, type ReactNode } from "react";
+import { ReactLenis, type LenisRef } from "lenis/react";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
+  const lenisRef = useRef<LenisRef>(null);
+
   useEffect(() => {
-    // Respect user's reduced-motion preference
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
+    if (lenisRef.current?.lenis) {
+      // Expose on window matching the exact reference site pattern
+      (window as unknown as { lenisInstance: unknown }).lenisInstance =
+        lenisRef.current.lenis;
     }
-
-    const lenis = new Lenis({
-      lerp: 0.065, // True physical inertia LERP: silky, weighted momentum glide
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 1.15, // Kinetic momentum impulse per wheel notch
-      touchMultiplier: 1.8,
-      syncTouch: true, // Enables inertial momentum on trackpads and touch devices
-      syncTouchLerp: 0.075,
-      touchInertiaExponent: 1.75,
-      infinite: false,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <ReactLenis
+      ref={lenisRef}
+      root
+      options={{
+        autoRaf: true,
+        lerp: 0.1,
+        duration: 1.2,
+        wheelMultiplier: 1,
+        easing: (x) => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+      }}
+    >
+      {children}
+    </ReactLenis>
+  );
 }
