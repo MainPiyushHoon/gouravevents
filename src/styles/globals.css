@@ -16,6 +16,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html.lenis,
+html.lenis body {
+  scroll-behavior: auto !important;
+}
+
 /* Custom luxury light scrollbar */
 * {
   scrollbar-width: thin;

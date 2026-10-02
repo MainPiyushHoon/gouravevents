@@ -1,35 +1,29 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
-import { ReactLenis, type LenisRef } from "lenis/react";
+import { useEffect, type ReactNode } from "react";
+import Lenis from "lenis";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
-  const lenisRef = useRef<LenisRef>(null);
-
   useEffect(() => {
-    if (lenisRef.current?.lenis) {
-      // Expose on window matching the exact reference site pattern
-      (window as unknown as { lenisInstance: unknown }).lenisInstance =
-        lenisRef.current.lenis;
-    }
+    // Continuous smooth-scrolling physics feature using Lenis
+    // Completely omits duration/easing so Lenis does NOT run a scripted animation
+    const lenis = new Lenis({
+      autoRaf: true,
+      lerp: 0.085, // Continuous linear interpolation (damped physics momentum)
+      wheelMultiplier: 0.85, // Calibrated distance per wheel tick
+      touchMultiplier: 1.5,
+      smoothWheel: true,
+      syncTouch: false,
+    });
+
+    // Expose on window for direct inspection
+    (window as unknown as { lenis: Lenis; lenisInstance: Lenis }).lenis = lenis;
+    (window as unknown as { lenis: Lenis; lenisInstance: Lenis }).lenisInstance = lenis;
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
-  return (
-    <ReactLenis
-      ref={lenisRef}
-      root
-      options={{
-        autoRaf: true,
-        duration: 1.8, // Stately, longer transition to prevent fast abrupt rushes
-        wheelMultiplier: 0.65, // Calibrated distance per wheel tick so content doesn't fly past
-        touchMultiplier: 1.2,
-        smoothWheel: true,
-        syncTouch: false,
-        // Quartic ease-out: starts gently and softly decelerates, eliminating the sudden 50% jump
-        easing: (t) => 1 - Math.pow(1 - t, 4),
-      }}
-    >
-      {children}
-    </ReactLenis>
-  );
+  return <>{children}</>;
 }
