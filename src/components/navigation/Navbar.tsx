@@ -1,21 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { MessageCircle, Menu, X, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { useLenis } from "lenis/react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Synchronize navbar elevation state directly with the Lenis smooth-scroll loop
+  useLenis(({ scroll }) => {
+    const shouldBeScrolled = scroll > 20;
+    if (isScrolled !== shouldBeScrolled) {
+      setIsScrolled(shouldBeScrolled);
+    }
+  });
 
   const directWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
     "Hi Gourav, I was admiring your work on gouravevents.com and would love to consult with you regarding our wedding."
