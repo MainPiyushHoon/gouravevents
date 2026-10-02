@@ -11,13 +11,15 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     }
 
     const lenis = new Lenis({
-      duration: 1.3,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.065, // True physical inertia LERP: silky, weighted momentum glide
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.15, // Kinetic momentum impulse per wheel notch
+      touchMultiplier: 1.8,
+      syncTouch: true, // Enables inertial momentum on trackpads and touch devices
+      syncTouchLerp: 0.075,
+      touchInertiaExponent: 1.75,
       infinite: false,
     });
 

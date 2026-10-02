@@ -27,11 +27,12 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-30 scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover object-center opacity-42 scale-105 transition-transform duration-1000 ease-out"
         />
         {/* Layered Luxury Light Scenography Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-alabaster via-alabaster/85 to-alabaster/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-alabaster via-transparent to-alabaster" />
+        <div className="absolute inset-0 bg-gradient-to-t from-alabaster via-alabaster/80 to-alabaster/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-alabaster/85 via-transparent to-alabaster/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,_rgba(238,223,205,0.4),_transparent_70%)]" />
       </div>
 
       {/* Content Container */}

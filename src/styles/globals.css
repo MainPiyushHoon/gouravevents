@@ -7,7 +7,11 @@
   --foreground: #1C1817;
 }
 
-/* Official Lenis Scroll Stutter Prevention */
+/* Official Lenis Scroll Stutter & Inertia Support */
+html {
+  overscroll-behavior-y: none;
+}
+
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -32,7 +36,7 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
