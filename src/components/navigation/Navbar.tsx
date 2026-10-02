@@ -24,10 +24,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 py-3.5 sm:py-4 backdrop-blur-md transform-gpu transition-[background-color,border-color,box-shadow] duration-300 ${
         isScrolled
-          ? "bg-alabaster/95 backdrop-blur-md border-b border-champagne-border/40 shadow-sm shadow-charcoal/5"
-          : "bg-alabaster/60 backdrop-blur-xs border-b border-transparent"
+          ? "bg-alabaster/95 border-b border-champagne-border/40 shadow-sm shadow-charcoal/5"
+          : "bg-alabaster/70 border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -76,19 +76,32 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-burgundy hover:text-charcoal transition-colors"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Navigation Actions */}
+        <div className="flex md:hidden items-center gap-2.5">
+          <Link
+            href="/enquire"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-[10px] uppercase tracking-[0.16em] font-medium shadow-xs active:scale-95 transition-all"
+          >
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-champagne-light"></span>
+            </span>
+            <span>Enquire</span>
+          </Link>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="w-9 h-9 rounded-full border border-champagne-border/50 bg-white/90 text-burgundy hover:bg-white active:scale-95 transition-all duration-200 shadow-2xs flex items-center justify-center cursor-pointer"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-alabaster/98 backdrop-blur-xl border-t border-champagne-border/40 z-40 px-6 py-10 flex flex-col justify-between shadow-2xl">
+        <div className="md:hidden fixed inset-0 top-[57px] sm:top-[65px] bg-alabaster border-t border-champagne-border/40 z-40 px-6 py-10 flex flex-col justify-between shadow-2xl overflow-y-auto">
           <nav className="flex flex-col space-y-6">
             {siteConfig.navLinks.map((link) => (
               <Link
