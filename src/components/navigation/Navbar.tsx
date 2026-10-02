@@ -23,85 +23,74 @@ export default function Navbar() {
   )}`;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 py-3.5 sm:py-4 backdrop-blur-md transform-gpu transition-[background-color,border-color,box-shadow] duration-300 ${
-        isScrolled
-          ? "bg-alabaster/95 border-b border-champagne-border/40 shadow-sm shadow-charcoal/5"
-          : "bg-alabaster/70 border-b border-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        {/* Brand Monogram & Wordmark */}
-        <Link
-          href="/"
-          className="group flex flex-col items-start transition-opacity hover:opacity-90"
-        >
-          <span className="font-serif text-lg md:text-xl tracking-[0.25em] text-burgundy uppercase font-semibold">
-            Gourav Events
-          </span>
-          <span className="text-[10px] tracking-[0.3em] text-taupe uppercase -mt-0.5 group-hover:text-rosegold transition-colors">
-            Wedding Studio
-          </span>
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-md transition-[background-color,border-color,box-shadow] duration-300 ${
+          isScrolled
+            ? "bg-alabaster/95 border-b border-champagne-border/40 shadow-sm shadow-charcoal/5"
+            : "bg-alabaster/70 border-b border-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+          {/* Brand Monogram & Wordmark */}
+          <Link
+            href="/"
+            className="group flex flex-col items-start transition-opacity hover:opacity-90"
+          >
+            <span className="font-serif text-lg md:text-xl tracking-[0.25em] text-burgundy uppercase font-semibold">
+              Gourav Events
+            </span>
+            <span className="text-[10px] tracking-[0.3em] text-taupe uppercase -mt-0.5 group-hover:text-rosegold transition-colors">
+              Wedding Studio
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {siteConfig.navLinks.map((link, idx) => {
-            const isLast = idx === siteConfig.navLinks.length - 1;
-            if (isLast) {
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {siteConfig.navLinks.map((link, idx) => {
+              const isLast = idx === siteConfig.navLinks.length - 1;
+              if (isLast) {
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-xs uppercase tracking-[0.18em] hover:bg-burgundy-light hover:border-burgundy-light transition-all duration-300 shadow-sm font-medium ml-2"
+                  >
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne-light"></span>
+                    </span>
+                    <span>{link.label}</span>
+                  </Link>
+                );
+              }
               return (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-xs uppercase tracking-[0.18em] hover:bg-burgundy-light hover:border-burgundy-light transition-all duration-300 shadow-sm font-medium ml-2"
+                  className="text-xs uppercase tracking-[0.2em] text-charcoal/80 hover:text-burgundy transition-colors relative py-1 group font-medium"
                 >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne-light"></span>
-                  </span>
-                  <span>{link.label}</span>
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-burgundy transition-all duration-300 group-hover:w-full" />
                 </Link>
               );
-            }
-            return (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-xs uppercase tracking-[0.2em] text-charcoal/80 hover:text-burgundy transition-colors relative py-1 group font-medium"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-burgundy transition-all duration-300 group-hover:w-full" />
-              </Link>
-            );
-          })}
-        </nav>
+            })}
+          </nav>
 
-        {/* Mobile Navigation Actions */}
-        <div className="flex md:hidden items-center gap-2.5">
-          <Link
-            href="/enquire"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-[10px] uppercase tracking-[0.16em] font-medium shadow-xs active:scale-95 transition-all"
-          >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-champagne-light"></span>
-            </span>
-            <span>Enquire</span>
-          </Link>
-
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="w-9 h-9 rounded-full border border-champagne-border/50 bg-white/90 text-burgundy hover:bg-white active:scale-95 transition-all duration-200 shadow-2xs flex items-center justify-center cursor-pointer"
+            className="md:hidden p-2 text-burgundy hover:text-charcoal transition-colors focus:outline-none"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[57px] sm:top-[65px] bg-alabaster border-t border-champagne-border/40 z-40 px-6 py-10 flex flex-col justify-between shadow-2xl overflow-y-auto">
+        <div className="md:hidden fixed inset-0 top-[65px] bg-alabaster/98 backdrop-blur-xl border-t border-champagne-border/40 z-40 px-6 py-10 flex flex-col justify-between shadow-2xl overflow-y-auto">
           <nav className="flex flex-col space-y-6">
             {siteConfig.navLinks.map((link) => (
               <Link
@@ -133,6 +122,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
