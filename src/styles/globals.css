@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0B0909;
+  --foreground: #F5EFE7;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom luxury scrollbar matching obsidian & champagne palette */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0909;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A0E16;
+  border-radius: 3px;
+  border: 1px solid rgba(232, 199, 168, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B76E79;
+}
+
+/* Base selection styling */
+::selection {
+  background-color: #2A0E16;
+  color: #E8C7A8;
+}
