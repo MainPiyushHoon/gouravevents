@@ -10,9 +10,9 @@ interface WeddingCardProps {
 
 export default function WeddingCard({ wedding, priority = false }: WeddingCardProps) {
   return (
-    <article className="group relative rounded-2xl overflow-hidden border border-champagne/15 bg-burgundy-deep/40 transition-all duration-500 hover:border-champagne/40 hover:shadow-2xl hover:shadow-burgundy/50 flex flex-col">
+    <article className="group relative rounded-2xl overflow-hidden border border-champagne-border/60 bg-white transition-all duration-500 hover:border-burgundy/40 hover:shadow-xl hover:shadow-charcoal/5 flex flex-col">
       {/* Visual Media Canvas */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-obsidian">
+      <div className="relative aspect-[16/10] overflow-hidden bg-ivory-subtle">
         <Image
           src={wedding.heroImage}
           alt={`${wedding.title} - ${wedding.couple}`}
@@ -21,17 +21,17 @@ export default function WeddingCard({ wedding, priority = false }: WeddingCardPr
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        {/* Layered luxury lighting */}
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+        {/* Layered soft lighting */}
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/70 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity" />
 
         {/* Location pill */}
-        <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md border border-champagne/20 text-[10px] uppercase tracking-[0.2em] text-champagne">
+        <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-champagne-border/50 text-[10px] uppercase tracking-[0.2em] text-burgundy font-medium shadow-sm">
           <MapPin className="w-3 h-3 text-rosegold" />
           <span>{wedding.location.split(",")[0]}</span>
         </div>
 
         {/* Year tag */}
-        <div className="absolute top-4 right-4 text-[10px] font-serif text-taupe/90 tracking-widest px-2 py-1 rounded bg-obsidian/60 backdrop-blur-sm">
+        <div className="absolute top-4 right-4 text-[10px] font-serif text-charcoal font-medium tracking-widest px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm border border-champagne-border/40 shadow-sm">
           {wedding.year}
         </div>
       </div>
@@ -39,32 +39,32 @@ export default function WeddingCard({ wedding, priority = false }: WeddingCardPr
       {/* Editorial Content */}
       <div className="p-6 md:p-8 flex flex-col justify-between flex-grow space-y-4">
         <div>
-          <div className="flex items-center gap-4 text-xs text-taupe tracking-wider mb-2 font-light">
+          <div className="flex items-center gap-4 text-xs text-taupe tracking-wider mb-2 font-medium">
             <span className="flex items-center gap-1">
               <Users className="w-3.5 h-3.5 text-rosegold" />
               {wedding.guestScale}
             </span>
             <span>·</span>
-            <span className="text-rosegold/90 truncate">{wedding.venue}</span>
+            <span className="text-burgundy truncate font-light">{wedding.venue}</span>
           </div>
 
-          <h3 className="font-serif text-xl md:text-2xl text-ivory font-normal group-hover:text-champagne transition-colors leading-snug">
+          <h3 className="font-serif text-xl md:text-2xl text-charcoal-deep font-normal group-hover:text-burgundy transition-colors leading-snug">
             {wedding.title}
           </h3>
 
-          <p className="text-xs uppercase tracking-[0.2em] text-rosegold font-light mt-1 mb-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-rosegold font-medium mt-1 mb-3">
             {wedding.couple}
           </p>
 
-          <p className="text-xs text-ivory/70 font-light leading-relaxed line-clamp-2">
+          <p className="text-xs text-charcoal-muted font-light leading-relaxed line-clamp-2">
             {wedding.description}
           </p>
         </div>
 
         {/* Deep Dive Action */}
-        <div className="pt-4 border-t border-champagne/10 flex items-center justify-between text-xs uppercase tracking-[0.15em] text-champagne font-medium">
+        <div className="pt-4 border-t border-champagne-border/40 flex items-center justify-between text-xs uppercase tracking-[0.15em] text-burgundy font-semibold">
           <span>Explore The Chronicle</span>
-          <div className="w-8 h-8 rounded-full border border-champagne/20 flex items-center justify-center group-hover:bg-champagne group-hover:text-obsidian transition-all duration-300">
+          <div className="w-8 h-8 rounded-full border border-burgundy/25 flex items-center justify-center text-burgundy group-hover:bg-burgundy group-hover:text-ivory transition-all duration-300">
             <ArrowUpRight className="w-4 h-4" />
           </div>
         </div>

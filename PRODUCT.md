@@ -34,7 +34,7 @@ Prospective clients and family decision-makers reviewing potential planners acro
 
 - Name: Gourav Events (gouravevents.com)
 - Voice & Tone: Editorial, evocative, sophisticated, regal, warm, and confident ("These people create extraordinary weddings").
-- Palette Direction: Obsidian (#0B0909), Deep Burgundy (#2A0E16), Rose Gold (#B76E79 as a restrained accent), Champagne (#E8C7A8), Warm Ivory (#F5EFE7), Muted Taupe (#9C8D88).
+- Palette Direction: Radiant Warm Alabaster (#FAF8F5), Elevated Pure White (#FFFFFF), High-Contrast Dark Charcoal (#1C1817), Royal Deep Burgundy (#3E1522), Restrained Rose Gold (#9E5460), and Champagne Bronze (#8C6843).
 - Explicit Anti-Patterns: No bright pink, no excessive metallic gradients, no ubiquitous gold, no generic luxury clichés, no excessive ornamental clutter, and no generic template layouts.
 
 ## Evidence on Hand
@@ -53,4 +53,4 @@ Prospective clients and family decision-makers reviewing potential planners acro
 
 ## Accessibility & Inclusion
 
-Ensure high-contrast readability against dark luxury backgrounds, intuitive touch-friendly navigation, smooth motion with `prefers-reduced-motion` compliance, and seamless mobile accessibility.
+Ensure high-contrast readability against radiant alabaster backgrounds (WCAG AAA compliant dark charcoal typography), intuitive touch-friendly navigation, buttery smooth sliding motion with `prefers-reduced-motion` compliance, and seamless mobile accessibility.

@@ -9,27 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#0B0909",
+        alabaster: "#FAF8F5", // Radiant warm white base
+        ivory: {
+          DEFAULT: "#FFFFFF",
+          warm: "#FAF8F5",
+          subtle: "#F4EFEA",
+          border: "#E8E0D5",
+        },
+        charcoal: {
+          DEFAULT: "#1C1817", // Primary high-contrast text
+          deep: "#0F0B0C",
+          muted: "#5C5250", // Secondary metadata
+          light: "#827673",
+        },
         burgundy: {
-          DEFAULT: "#2A0E16",
-          deep: "#1A080D",
-          light: "#3D1420",
-          card: "rgba(42, 14, 22, 0.4)",
+          DEFAULT: "#3E1522", // Royal heritage wine
+          deep: "#250912",
+          light: "#5A2033",
+          subtle: "#F7EDF0",
+          card: "rgba(62, 21, 34, 0.04)",
         },
         rosegold: {
-          DEFAULT: "#B76E79",
-          muted: "rgba(183, 110, 121, 0.35)",
+          DEFAULT: "#9E5460", // Restrained luxury metallic
+          muted: "#D8B4BA",
+          subtle: "rgba(158, 84, 96, 0.12)",
         },
         champagne: {
-          DEFAULT: "#E8C7A8",
-          subtle: "#F2DEC9",
-          muted: "rgba(232, 199, 168, 0.15)",
+          DEFAULT: "#8C6843", // Warm champagne bronze
+          dark: "#6E4F2E",
+          light: "#EADBC8",
+          subtle: "#F9F4EE",
+          border: "#D6C4AE",
         },
-        ivory: {
-          DEFAULT: "#F5EFE7",
-          muted: "#D8CEBE",
+        taupe: {
+          DEFAULT: "#7A6E6A",
+          muted: "#A89D99",
+          light: "#E5DFDB",
         },
-        taupe: "#9C8D88",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Cinzel", "serif"],

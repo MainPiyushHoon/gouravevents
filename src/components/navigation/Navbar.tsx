@@ -17,7 +17,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // WhatsApp link for instant founder inquiry
   const directWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
     "Hi Gourav, I was admiring your work on gouravevents.com and would love to consult with you regarding our wedding."
   )}`;
@@ -26,7 +25,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-obsidian/90 backdrop-blur-md border-b border-champagne/10 py-3.5 shadow-2xl shadow-obsidian/80"
+          ? "bg-alabaster/92 backdrop-blur-md border-b border-champagne-border/40 py-3.5 shadow-sm shadow-charcoal/5"
           : "bg-transparent py-5"
       }`}
     >
@@ -36,7 +35,7 @@ export default function Navbar() {
           href="/"
           className="group flex flex-col items-start transition-opacity hover:opacity-90"
         >
-          <span className="font-serif text-lg md:text-xl tracking-[0.25em] text-champagne uppercase font-medium">
+          <span className="font-serif text-lg md:text-xl tracking-[0.25em] text-burgundy uppercase font-semibold">
             Gourav Events
           </span>
           <span className="text-[10px] tracking-[0.3em] text-taupe uppercase -mt-0.5 group-hover:text-rosegold transition-colors">
@@ -50,10 +49,10 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-xs uppercase tracking-[0.2em] text-ivory/80 hover:text-champagne transition-colors relative py-1 group"
+              className="text-xs uppercase tracking-[0.2em] text-charcoal/80 hover:text-burgundy transition-colors relative py-1 group font-medium"
             >
               {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-burgundy transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -64,13 +63,13 @@ export default function Navbar() {
             href={directWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-4 py-2 rounded-full border border-champagne/25 bg-burgundy/40 text-champagne text-xs uppercase tracking-[0.15em] hover:bg-champagne hover:text-obsidian hover:border-champagne transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-4 py-2 rounded-full border border-burgundy/30 bg-burgundy text-ivory text-xs uppercase tracking-[0.15em] hover:bg-burgundy-light hover:border-burgundy-light transition-all duration-300 shadow-sm"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-champagne-light opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-champagne-light"></span>
             </span>
-            <MessageCircle className="w-3.5 h-3.5" />
+            <MessageCircle className="w-3.5 h-3.5 text-champagne-light" />
             <span>Speak with Gourav</span>
           </a>
         </div>
@@ -78,7 +77,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-champagne hover:text-ivory transition-colors"
+          className="md:hidden p-2 text-burgundy hover:text-charcoal transition-colors"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -87,22 +86,22 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-obsidian/98 backdrop-blur-xl border-t border-champagne/10 z-40 px-6 py-10 flex flex-col justify-between">
+        <div className="md:hidden fixed inset-0 top-[65px] bg-alabaster/98 backdrop-blur-xl border-t border-champagne-border/40 z-40 px-6 py-10 flex flex-col justify-between shadow-2xl">
           <nav className="flex flex-col space-y-6">
             {siteConfig.navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base uppercase tracking-[0.2em] text-ivory/90 hover:text-champagne transition-colors flex items-center justify-between border-b border-champagne/5 pb-3"
+                className="text-base uppercase tracking-[0.2em] text-charcoal/90 hover:text-burgundy transition-colors flex items-center justify-between border-b border-champagne-border/20 pb-3 font-medium"
               >
                 <span>{link.label}</span>
-                <ArrowUpRight className="w-4 h-4 text-rosegold" />
+                <ArrowUpRight className="w-4 h-4 text-burgundy" />
               </Link>
             ))}
           </nav>
 
-          <div className="pt-8 border-t border-champagne/10 flex flex-col gap-4">
+          <div className="pt-8 border-t border-champagne-border/30 flex flex-col gap-4">
             <p className="text-xs text-taupe tracking-wider">
               Direct founder consultations via WhatsApp:
             </p>
@@ -111,9 +110,9 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-champagne text-obsidian text-xs uppercase tracking-[0.15em] font-medium hover:bg-champagne-subtle transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-burgundy text-ivory text-xs uppercase tracking-[0.15em] font-medium hover:bg-burgundy-light transition-colors shadow-md"
             >
-              <MessageCircle className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4 text-champagne-light" />
               <span>Connect on WhatsApp</span>
             </a>
           </div>

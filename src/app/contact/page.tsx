@@ -15,17 +15,17 @@ export default function ContactPage() {
   )}`;
 
   return (
-    <main className="min-h-screen bg-obsidian pt-32 pb-24 text-ivory">
+    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-medium">
+          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
             Personal Engagement
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-champagne mt-3 mb-6 font-normal">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-6 font-normal">
             VIP Concierge
           </h1>
-          <p className="text-sm md:text-base text-ivory/80 font-light leading-relaxed">
+          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
             Every conversation begins directly with the founder. Whether you have confirmed your destination or are beginning to explore venues, we invite you to connect.
           </p>
         </div>
@@ -35,15 +35,15 @@ export default function ContactPage() {
           {/* Left Column: Direct Founder Line & Destination Hubs */}
           <div className="lg:col-span-5 space-y-8">
             {/* Direct Line Card */}
-            <div className="rounded-2xl border border-champagne/20 bg-burgundy-deep/60 p-8 space-y-6 shadow-xl">
+            <div className="rounded-2xl border border-taupe-light/60 bg-white p-8 space-y-6 shadow-sm">
               <div>
-                <span className="text-[11px] uppercase tracking-[0.25em] text-rosegold font-medium">
+                <span className="text-[11px] uppercase tracking-[0.25em] text-rosegold font-semibold">
                   Direct Line
                 </span>
-                <h3 className="font-serif text-2xl text-champagne mt-1">
+                <h3 className="font-serif text-2xl text-charcoal-deep mt-1 font-normal">
                   Speak with Gourav
                 </h3>
-                <p className="text-xs text-taupe font-light mt-1">
+                <p className="text-xs text-burgundy font-medium mt-1">
                   Founder & Principal Event Architect
                 </p>
               </div>
@@ -53,61 +53,61 @@ export default function ContactPage() {
                   href={directWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3.5 rounded-xl border border-champagne/20 bg-obsidian/70 hover:border-champagne hover:bg-champagne hover:text-obsidian transition-all group"
+                  className="flex items-center gap-3 p-3.5 rounded-xl border border-burgundy/25 bg-burgundy/5 hover:border-burgundy hover:bg-burgundy hover:text-white transition-all group shadow-2xs"
                 >
-                  <MessageCircle className="w-5 h-5 text-champagne group-hover:text-obsidian transition-colors" />
+                  <MessageCircle className="w-5 h-5 text-burgundy group-hover:text-champagne transition-colors" />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-wider text-taupe group-hover:text-obsidian/80">
+                    <span className="block text-[10px] uppercase tracking-wider text-charcoal-muted group-hover:text-white/80">
                       Primary Channel
                     </span>
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-medium text-charcoal-deep group-hover:text-white">
                       WhatsApp Hotline
                     </span>
                   </div>
                 </a>
 
-                <div className="flex items-center gap-3 p-3.5 rounded-xl border border-champagne/10 bg-obsidian/40">
+                <div className="flex items-center gap-3 p-3.5 rounded-xl border border-taupe-light/50 bg-alabaster/60">
                   <Phone className="w-5 h-5 text-rosegold" />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-wider text-taupe">
+                    <span className="block text-[10px] uppercase tracking-wider text-charcoal-muted">
                       Telephone
                     </span>
-                    <span className="text-sm font-light text-ivory/90">
+                    <span className="text-sm font-medium text-charcoal-deep">
                       {siteConfig.phoneDisplay}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3.5 rounded-xl border border-champagne/10 bg-obsidian/40">
+                <div className="flex items-center gap-3 p-3.5 rounded-xl border border-taupe-light/50 bg-alabaster/60">
                   <Mail className="w-5 h-5 text-rosegold" />
                   <div>
-                    <span className="block text-[10px] uppercase tracking-wider text-taupe">
+                    <span className="block text-[10px] uppercase tracking-wider text-charcoal-muted">
                       Concierge Desk
                     </span>
-                    <span className="text-sm font-light text-ivory/90">
+                    <span className="text-sm font-medium text-charcoal-deep">
                       {siteConfig.email}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-champagne/10 flex items-center gap-2 text-xs text-taupe">
+              <div className="pt-4 border-t border-taupe-light/40 flex items-center gap-2 text-xs text-charcoal-muted">
                 <Clock className="w-4 h-4 text-rosegold" />
                 <span>Responses typically within 2-4 hours</span>
               </div>
             </div>
 
             {/* Regional Presence Hubs */}
-            <div className="rounded-2xl border border-champagne/15 bg-obsidian/60 p-8 space-y-4">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-champagne block font-medium">
+            <div className="rounded-2xl border border-taupe-light/60 bg-white p-8 space-y-4 shadow-sm">
+              <span className="text-[11px] uppercase tracking-[0.25em] text-rosegold block font-semibold">
                 Destination Presence Hubs
               </span>
               <div className="space-y-3">
                 {siteConfig.hubs.map((hub) => (
-                  <div key={hub.city} className="flex items-start gap-2.5 text-xs text-ivory/70 font-light">
-                    <MapPin className="w-3.5 h-3.5 text-rosegold shrink-0 mt-0.5" />
+                  <div key={hub.city} className="flex items-start gap-2.5 text-xs text-charcoal-muted font-light">
+                    <MapPin className="w-3.5 h-3.5 text-burgundy shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-champagne font-medium">{hub.city}:</strong>{" "}
+                      <strong className="text-charcoal-deep font-semibold">{hub.city}:</strong>{" "}
                       {hub.address}
                     </div>
                   </div>
@@ -116,8 +116,8 @@ export default function ContactPage() {
             </div>
 
             {/* Private Commission Notice */}
-            <div className="rounded-xl border border-champagne/10 bg-burgundy/20 p-5 flex items-start gap-3 text-xs text-taupe font-light">
-              <ShieldCheck className="w-5 h-5 text-champagne shrink-0 mt-0.5" />
+            <div className="rounded-xl border border-taupe-light/60 bg-ivory-warm/60 p-5 flex items-start gap-3 text-xs text-charcoal-muted font-light">
+              <ShieldCheck className="w-5 h-5 text-burgundy shrink-0 mt-0.5" />
               <p>
                 We limit each calendar year to a selective number of royal commissions to protect uncompromised quality and undivided personal attention.
               </p>

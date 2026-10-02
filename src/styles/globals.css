@@ -3,8 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #0B0909;
-  --foreground: #F5EFE7;
+  --background: #FAF8F5;
+  --foreground: #1C1817;
+}
+
+/* Official Lenis Scroll Stutter Prevention */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -16,24 +37,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom luxury scrollbar matching obsidian & champagne palette */
+/* Custom luxury light scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0909;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2A0E16;
+  background: #D6C4AE;
   border-radius: 3px;
-  border: 1px solid rgba(232, 199, 168, 0.2);
+  border: 1px solid rgba(140, 104, 67, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B76E79;
+  background: #8C6843;
 }
 
 /* Base selection styling */
 ::selection {
-  background-color: #2A0E16;
-  color: #E8C7A8;
+  background-color: #3E1522;
+  color: #FAF8F5;
 }

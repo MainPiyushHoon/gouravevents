@@ -21,8 +21,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0B0909",
-  colorScheme: "dark",
+  themeColor: "#FAF8F5",
+  colorScheme: "light",
 };
 
 export const metadata: Metadata = {
@@ -72,9 +72,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${plusJakartaSans.variable} scroll-smooth`}
+      className={`${cinzel.variable} ${plusJakartaSans.variable}`}
     >
-      <body className="bg-obsidian text-ivory antialiased min-h-screen flex flex-col font-sans selection:bg-burgundy selection:text-champagne">
+      <body className="bg-alabaster text-charcoal antialiased min-h-screen flex flex-col font-sans selection:bg-burgundy selection:text-ivory">
         <SmoothScroll>
           <Navbar />
           <div className="flex-grow">{children}</div>

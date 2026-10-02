@@ -8,7 +8,7 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-obsidian">
+    <main className="min-h-screen bg-alabaster">
       <Hero />
       <FeaturedWeddings />
       <DestinationsShowcase />
@@ -17,16 +17,16 @@ export default function Home() {
       <TestimonialSlider />
 
       {/* Direct VIP WhatsApp Concierge Section on Homepage */}
-      <section id="inquiry" className="py-24 bg-gradient-to-t from-obsidian via-burgundy-deep to-obsidian border-t border-champagne/10 relative">
+      <section id="inquiry" className="py-24 bg-gradient-to-t from-alabaster via-ivory-subtle/50 to-alabaster border-t border-champagne-border/40 relative">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-medium">
+            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
               Private Commission
             </span>
-            <h2 className="font-serif text-3xl md:text-5xl text-champagne mt-2 mb-4 font-normal">
+            <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-2 mb-4 font-normal">
               Begin Planning with Gourav
             </h2>
-            <p className="text-sm text-ivory/80 font-light max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm text-charcoal-muted font-light max-w-xl mx-auto leading-relaxed">
               Every detail is held in sacred trust. Share your celebration vision to launch an immediate private conversation on WhatsApp.
             </p>
           </div>
