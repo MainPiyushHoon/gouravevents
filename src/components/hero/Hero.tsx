@@ -52,7 +52,7 @@ export default function Hero() {
 
         {/* Supporting Narrative */}
         <p className="max-w-2xl text-sm sm:text-base md:text-lg text-charcoal-deep/85 font-light leading-relaxed mb-10 tracking-wide">
-          From the regal palace courtyards of Jaipur and Udaipur to the ancient wilderness of Jim Corbett and sacred riverbanks of Rishikesh — every celebration is personally curated and masterminded by Gourav.
+          From the ancient wilderness sanctuaries of Jim Corbett to the regal palace courtyards of Jaipur and Udaipur, and the sacred riverbanks of Rishikesh — every celebration is personally curated and masterminded by Gourav.
         </p>
 
         {/* Dual Luxury Action Pathways */}
@@ -79,11 +79,11 @@ export default function Hero() {
 
         {/* Destination Footnotes */}
         <div className="mt-14 pt-8 border-t border-champagne-border/40 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs uppercase tracking-[0.25em] text-taupe font-medium">
+          <span className="hover:text-burgundy transition-colors">Jim Corbett</span>
+          <span className="text-rosegold/50">✦</span>
           <span className="hover:text-burgundy transition-colors">Jaipur</span>
           <span className="text-rosegold/50">✦</span>
           <span className="hover:text-burgundy transition-colors">Udaipur</span>
-          <span className="text-rosegold/50">✦</span>
-          <span className="hover:text-burgundy transition-colors">Jim Corbett</span>
           <span className="text-rosegold/50">✦</span>
           <span className="hover:text-burgundy transition-colors">Rishikesh</span>
         </div>

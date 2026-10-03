@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     template: "%s | Gourav Events",
   },
   description:
-    "Bespoke luxury wedding planning and event design studio crafting extraordinary royal and scenic celebrations in Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+    "Bespoke luxury wedding planning and event design studio crafting extraordinary royal and scenic celebrations in Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
   keywords: [
+    "wilderness wedding Jim Corbett",
     "luxury wedding planner India",
     "royal destination wedding Jaipur",
     "lake palace wedding Udaipur",
-    "wilderness wedding Jim Corbett",
     "riverside wedding Rishikesh",
     "Gourav Events",
   ],
@@ -61,14 +61,14 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: "Gourav Events | Luxury & Royal Wedding Planners",
     description:
-      "Crafting extraordinary weddings where royalty meets emotion across Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+      "Crafting extraordinary weddings where royalty meets emotion across Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
     title: "Gourav Events | Luxury & Royal Wedding Planners",
     description:
-      "Crafting extraordinary weddings where royalty meets emotion across Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+      "Crafting extraordinary weddings where royalty meets emotion across Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
   },
   robots: {
     index: true,
@@ -86,9 +86,9 @@ const jsonLd = {
   telephone: siteConfig.phoneDisplay,
   priceRange: "$$$$",
   areaServed: [
+    { "@type": "AdministrativeArea", name: "Jim Corbett" },
     { "@type": "AdministrativeArea", name: "Jaipur" },
     { "@type": "AdministrativeArea", name: "Udaipur" },
-    { "@type": "AdministrativeArea", name: "Jim Corbett" },
     { "@type": "AdministrativeArea", name: "Rishikesh" },
     { "@type": "Country", name: "India" },
   ],

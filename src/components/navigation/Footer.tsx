@@ -144,7 +144,7 @@ export default function Footer() {
                 <span className="text-ivory/60 block text-[10px] uppercase tracking-wider">
                   Presence Hubs:
                 </span>
-                Jaipur · Udaipur · Jim Corbett · Rishikesh
+                Jim Corbett · Jaipur · Udaipur · Rishikesh
               </p>
             </div>
           </div>

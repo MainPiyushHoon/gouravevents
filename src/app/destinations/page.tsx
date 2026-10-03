@@ -5,12 +5,35 @@ import { MessageCircle, MapPin, CheckCircle2, ArrowRight, Calendar, Sparkles } f
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Destinations of Distinction — Jaipur, Udaipur, Jim Corbett & Rishikesh",
+  title: "Destinations of Distinction — Jim Corbett, Jaipur, Udaipur & Rishikesh",
   description:
-    "Explore India's most evocative wedding destinations curated by Gourav Events. Royal heritage palaces in Jaipur and Udaipur, wilderness sanctuaries in Jim Corbett, and sacred riverfronts in Rishikesh.",
+    "Explore India's most evocative wedding destinations curated by Gourav Events. Wilderness sanctuaries in Jim Corbett, royal heritage palaces in Jaipur and Udaipur, and sacred riverfronts in Rishikesh.",
 };
 
 const destinationDetails = [
+  {
+    id: "corbett",
+    name: "Jim Corbett",
+    title: "Wilderness Grandeur & Forest Luxury",
+    subheading: "Ancient Foothills, Sal Groves & Raw Majesty",
+    description:
+      "Where raw natural grandeur meets ultra-luxe hospitality. Set against the Himalayan foothills and ancient sal tree canopies, we curate intimate wilderness weddings with lantern-lit riverbeds, botanical floral arches, and acoustic fire-pit soirees.",
+    landscape: "Ancient sal trees, misty foothills & riverine retreats",
+    bestSeason: "November through April (Crisp mountain air & starry night skies)",
+    signatureVenues: [
+      "Taj Corbett Resort & Spa (River Kosi Waterfront)",
+      "The Riverview Retreat (Foothills Sanctuary)",
+      "Aahana Wilderness Luxury (Eco-Haute Reserve)",
+      "Namah Resort (Riverside Terraces & Lawn Enclaves)",
+    ],
+    rituals: [
+      "Lantern-lit riverbed sangeet with mountain acoustic music",
+      "Organic botanical canopy banquets with earthen scents",
+      "Starlit wilderness fire-pit gatherings with warm blankets",
+      "Dawn pheras bathed in misty Himalayan morning sunlight",
+    ],
+    image: "/images/destinations/corbett.jpg",
+  },
   {
     id: "jaipur",
     name: "Jaipur",
@@ -56,29 +79,6 @@ const destinationDetails = [
       "Sunset acoustic sundowners on island courtyards",
     ],
     image: "/images/destinations/udaipur.jpg",
-  },
-  {
-    id: "corbett",
-    name: "Jim Corbett",
-    title: "Wilderness Grandeur & Forest Luxury",
-    subheading: "Ancient Foothills, Sal Groves & Raw Majesty",
-    description:
-      "Where raw natural grandeur meets ultra-luxe hospitality. Set against the Himalayan foothills and ancient sal tree canopies, we curate intimate wilderness weddings with lantern-lit riverbeds, botanical floral arches, and acoustic fire-pit soirees.",
-    landscape: "Ancient sal trees, misty foothills & riverine retreats",
-    bestSeason: "November through April (Crisp mountain air & starry night skies)",
-    signatureVenues: [
-      "Taj Corbett Resort & Spa (River Kosi Waterfront)",
-      "The Riverview Retreat (Foothills Sanctuary)",
-      "Aahana Wilderness Luxury (Eco-Haute Reserve)",
-      "Namah Resort (Riverside Terraces & Lawn Enclaves)",
-    ],
-    rituals: [
-      "Lantern-lit riverbed sangeet with mountain acoustic music",
-      "Organic botanical canopy banquets with earthen scents",
-      "Starlit wilderness fire-pit gatherings with warm blankets",
-      "Dawn pheras bathed in misty Himalayan morning sunlight",
-    ],
-    image: "/images/destinations/corbett.jpg",
   },
   {
     id: "rishikesh",

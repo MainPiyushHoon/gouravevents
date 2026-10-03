@@ -6,7 +6,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: "VIP Concierge & Direct Inquiries",
   description:
-    "Initiate your private wedding planning consultation directly with Gourav on WhatsApp. Dedicated destination concierge for Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+    "Initiate your private wedding planning consultation directly with Gourav on WhatsApp. Dedicated destination concierge for Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
 };
 
 export default function ContactPage() {

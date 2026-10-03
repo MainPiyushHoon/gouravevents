@@ -9,9 +9,9 @@ import WeddingCard from "@/components/weddings/WeddingCard";
 
 const filterTabs = [
   { id: "all", label: "All Celebrations" },
+  { id: "corbett", label: "Jim Corbett" },
   { id: "jaipur", label: "Jaipur" },
   { id: "udaipur", label: "Udaipur" },
-  { id: "corbett", label: "Jim Corbett" },
   { id: "rishikesh", label: "Rishikesh" },
 ];
 

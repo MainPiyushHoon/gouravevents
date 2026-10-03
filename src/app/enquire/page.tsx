@@ -6,7 +6,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: "Enquire Now — Private Wedding Commission",
   description:
-    "Initiate your private wedding planning consultation directly with founder Gourav. Dedicated destination concierge for Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+    "Initiate your private wedding planning consultation directly with founder Gourav. Dedicated destination concierge for Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
 };
 
 export default function EnquirePage() {

@@ -23,7 +23,7 @@ export default function FounderEthos() {
             When a couple invites us into their sacred journey, they aren&apos;t handed over to junior coordinators or regional sub-agencies. I personally lead every architectural sketch, every venue walk-through, every vendor negotiation, and every twilight phera.
           </p>
           <p className="text-taupe font-normal">
-            By intentionally limiting our calendar to a selective number of celebrations each season across Jaipur, Udaipur, Jim Corbett, and Rishikesh, we preserve what matters most: uncompromised artistry, genuine emotional investment, and perfection in execution.
+            By intentionally limiting our calendar to a selective number of celebrations each season across Jim Corbett, Jaipur, Udaipur, and Rishikesh, we preserve what matters most: uncompromised artistry, genuine emotional investment, and perfection in execution.
           </p>
         </div>
 

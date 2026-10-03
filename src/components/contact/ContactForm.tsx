@@ -28,7 +28,7 @@ export default function ContactForm() {
     resolver: zodResolver(inquirySchema),
     defaultValues: {
       name: "",
-      destination: "jaipur",
+      destination: "corbett",
       date: "",
       guests: "",
       vision: "",
@@ -103,9 +103,9 @@ export default function ContactForm() {
                 {...register("destination")}
                 className="w-full px-4 py-3 rounded-xl bg-alabaster border border-champagne-border/60 text-charcoal text-sm focus:outline-none focus:border-burgundy focus:bg-white transition-colors"
               >
+                <option value="corbett">Jim Corbett (Forest Luxury & Sanctuary)</option>
                 <option value="jaipur">Jaipur (Heritage Palace)</option>
                 <option value="udaipur">Udaipur (Lakeside Romance)</option>
-                <option value="corbett">Jim Corbett (Forest Luxury)</option>
                 <option value="rishikesh">Rishikesh (Sacred Riverfront)</option>
                 <option value="other">Other Luxury Destination</option>
               </select>

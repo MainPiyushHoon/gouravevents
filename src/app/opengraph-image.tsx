@@ -134,11 +134,11 @@ export default async function Image() {
             color: "rgba(250, 248, 245, 0.8)",
           }}
         >
+          <span>Jim Corbett</span>
+          <span style={{ color: "#D4AF37" }}>•</span>
           <span>Jaipur</span>
           <span style={{ color: "#D4AF37" }}>•</span>
           <span>Udaipur</span>
-          <span style={{ color: "#D4AF37" }}>•</span>
-          <span>Jim Corbett</span>
           <span style={{ color: "#D4AF37" }}>•</span>
           <span>Rishikesh</span>
         </div>

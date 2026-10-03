@@ -21,6 +21,39 @@ export interface Wedding {
 
 export const weddings: Wedding[] = [
   {
+    slug: "kabir-meera-corbett-wilderness",
+    title: "Enchanted Wilds & Forest Grandeur",
+    couple: "Kabir & Meera",
+    year: 2024,
+    location: "Jim Corbett, Uttarakhand",
+    destinationTag: "corbett",
+    venue: "Riverine Reserve Sanctuary & Ancient Canopies",
+    guestScale: "220 Guests",
+    description:
+      "An intimate haute-luxe jungle soiree seamlessly blending raw forest majesty with bespoke organic scenography.",
+    narrative:
+      "For Kabir and Meera, nature was the sacred witness. Set inside the pristine jungle borders of Jim Corbett along the Kosi River, we orchestrated an intimate luxury gathering where ancient sal trees became natural chandeliers draped in micro-fairy lights, wild ferns, and white orchid cascades. The reception unfolded around colossal stone fire pits with live acoustic gypsy-folk harmonies under clear Himalayan skies.",
+    decorTheme: "Organic Forest Luxury, Earthy Taupe & Warm Firelight",
+    heroImage: "/images/weddings/corbett-wedding-hero.jpg",
+    gallery: [
+      "/images/weddings/corbett-wedding-1.jpg",
+      "/images/weddings/corbett-wedding-2.jpg",
+      "/images/weddings/corbett-wedding-3.jpg",
+      "/images/weddings/corbett-wedding-4.jpg",
+    ],
+    decorHighlights: [
+      "Riverbed banquet tables carved from reclaimed natural driftwood",
+      "Suspended botanical arches with 10,000 hand-strung jasmine buds",
+      "Acoustic amphitheater ringed by warm river rock fire bowls",
+      "Open-air cocktail conservatory under the Himalayan canopy",
+    ],
+    testimonial: {
+      quote:
+        "Gourav transformed the untamed forest into the most elegant, deeply emotional wedding our families have ever witnessed. It felt otherworldly.",
+      author: "Kabir & Meera",
+    },
+  },
+  {
     slug: "aryaman-nayantara-jaipur-palace",
     title: "The Royal Amber Splendor",
     couple: "Aryaman & Nayantara",
@@ -84,39 +117,6 @@ export const weddings: Wedding[] = [
       quote:
         "The attention to spatial detail was astonishing. Gourav took personal ownership of every minute, allowing us and our families to experience pure magic without a moment of stress.",
       author: "Dev & Tara",
-    },
-  },
-  {
-    slug: "kabir-meera-corbett-wilderness",
-    title: "Enchanted Wilds & Forest Grandeur",
-    couple: "Kabir & Meera",
-    year: 2024,
-    location: "Jim Corbett, Uttarakhand",
-    destinationTag: "corbett",
-    venue: "Riverine Reserve Sanctuary & Ancient Canopies",
-    guestScale: "220 Guests",
-    description:
-      "An intimate haute-luxe jungle soiree seamlessly blending raw forest majesty with bespoke organic scenography.",
-    narrative:
-      "For Kabir and Meera, nature was the sacred witness. Set inside the pristine jungle borders of Jim Corbett along the Kosi River, we orchestrated an intimate luxury gathering where ancient sal trees became natural chandeliers draped in micro-fairy lights, wild ferns, and white orchid cascades. The reception unfolded around colossal stone fire pits with live acoustic gypsy-folk harmonies under clear Himalayan skies.",
-    decorTheme: "Organic Forest Luxury, Earthy Taupe & Warm Firelight",
-    heroImage: "/images/weddings/corbett-wedding-hero.jpg",
-    gallery: [
-      "/images/weddings/corbett-wedding-1.jpg",
-      "/images/weddings/corbett-wedding-2.jpg",
-      "/images/weddings/corbett-wedding-3.jpg",
-      "/images/weddings/corbett-wedding-4.jpg",
-    ],
-    decorHighlights: [
-      "Riverbed banquet tables carved from reclaimed natural driftwood",
-      "Suspended botanical arches with 10,000 hand-strung jasmine buds",
-      "Acoustic amphitheater ringed by warm river rock fire bowls",
-      "Open-air cocktail conservatory under the Himalayan canopy",
-    ],
-    testimonial: {
-      quote:
-        "Gourav transformed the untamed forest into the most elegant, deeply emotional wedding our families have ever witnessed. It felt otherworldly.",
-      author: "Kabir & Meera",
     },
   },
   {

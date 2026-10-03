@@ -1,5 +1,5 @@
 export interface DestinationInfo {
-  id: "jaipur" | "udaipur" | "corbett" | "rishikesh";
+  id: "corbett" | "jaipur" | "udaipur" | "rishikesh";
   name: string;
   tagline: string;
   landscape: string;
@@ -13,7 +13,7 @@ export const siteConfig = {
   name: "Gourav Events",
   tagline: "Extraordinary Weddings Where Royalty Meets Emotion",
   description:
-    "Premier luxury wedding planning and event design studio specializing in royal heritage palaces and evocative natural sanctuaries across Jaipur, Udaipur, Jim Corbett, and Rishikesh.",
+    "Premier luxury wedding planning and event design studio specializing in evocative wilderness sanctuaries and royal heritage palaces across Jim Corbett, Jaipur, Udaipur, and Rishikesh.",
   domain: "gouravevents.com",
   url: "https://gouravevents.com",
   founder: "Gourav",
@@ -22,12 +22,23 @@ export const siteConfig = {
   whatsappNumber: "919876543210",
   email: "concierge@gouravevents.com",
   hubs: [
+    { city: "Jim Corbett", address: "Dhikala Reserve Corridor, Ramnagar, Uttarakhand" },
     { city: "Jaipur", address: "C-Scheme, Civil Lines, Jaipur, Rajasthan" },
     { city: "Udaipur", address: "Fateh Sagar Heritage Quarter, Udaipur, Rajasthan" },
-    { city: "Jim Corbett", address: "Dhikala Reserve Corridor, Ramnagar, Uttarakhand" },
     { city: "Rishikesh", address: "Ganga Sanctuary Enclave, Tapovan, Rishikesh, Uttarakhand" },
   ],
   destinations: [
+    {
+      id: "corbett",
+      name: "Jim Corbett",
+      tagline: "Wilderness Grandeur & Forest Luxury",
+      landscape: "Ancient sal trees, misty foothills & riverine retreats",
+      description:
+        "Where raw natural majesty meets elevated haute-luxe hospitality. We curate intimate jungle celebrations surrounded by ancient canopies, riverbank fire pits, and organic floral architecture.",
+      highlights: ["Lantern-lit riverbed sangeet", "Canopy botanical banquets", "Starlit wilderness acoustic soirees"],
+      signatureVenues: ["Taj Corbett Resort & Spa", "The Riverview Retreat", "Aahana Wilderness Luxury", "Namah Resort"],
+      heroImage: "/images/destinations/corbett.jpg",
+    },
     {
       id: "jaipur",
       name: "Jaipur",
@@ -49,17 +60,6 @@ export const siteConfig = {
       highlights: ["Illuminated boat bridal arrivals", "Marble terrace fireworks displays", "Floating mandap scenography"],
       signatureVenues: ["Taj Lake Palace", "The Leela Palace Udaipur", "Jagmandir Island Palace", "Oberoi Udaivilas"],
       heroImage: "/images/destinations/udaipur.jpg",
-    },
-    {
-      id: "corbett",
-      name: "Jim Corbett",
-      tagline: "Wilderness Grandeur & Forest Luxury",
-      landscape: "Ancient sal trees, misty foothills & riverine retreats",
-      description:
-        "Where raw natural majesty meets elevated haute-luxe hospitality. We curate intimate jungle celebrations surrounded by ancient canopies, riverbank fire pits, and organic floral architecture.",
-      highlights: ["Lantern-lit riverbed sangeet", "Canopy botanical banquets", "Starlit wilderness acoustic soirees"],
-      signatureVenues: ["Taj Corbett Resort & Spa", "The Riverview Retreat", "Aahana Wilderness Luxury", "Namah Resort"],
-      heroImage: "/images/destinations/corbett.jpg",
     },
     {
       id: "rishikesh",

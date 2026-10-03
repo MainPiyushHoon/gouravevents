@@ -8,7 +8,7 @@ import { siteConfig, type DestinationInfo } from "@/data/site";
 import Swup from "swup";
 
 export default function DestinationsShowcase() {
-  const [activeId, setActiveId] = useState<DestinationInfo["id"]>("jaipur");
+  const [activeId, setActiveId] = useState<DestinationInfo["id"]>("corbett");
   const [isTransitioning, setIsTransitioning] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const swupRef = useRef<Swup | null>(null);
