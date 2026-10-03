@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import {
@@ -25,8 +26,16 @@ export default function FounderEthos() {
           <FloralCorner position="bottom-left" className="!text-gold/80" />
           <FloralCorner position="bottom-right" className="!text-gold/80" />
 
-          {/* Symmetrical Rosette */}
-          <RoyalBlossomMedallion className="text-gold" />
+          {/* Official Brand Emblem */}
+          <div className="relative w-12 h-12 mx-auto mb-4 drop-shadow-sm">
+            <Image
+              src="/brand-logo.png"
+              alt="Gaurav Events Royal Emblem"
+              fill
+              sizes="48px"
+              className="object-contain"
+            />
+          </div>
 
           <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold block mb-2">
             The Founder&apos;s Manifesto

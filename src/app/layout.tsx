@@ -66,6 +66,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/brand-logo.png", type: "image/png" },
       { url: "/icon", sizes: "32x32", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
@@ -115,6 +116,7 @@ const jsonLd = {
   },
   sameAs: [
     siteConfig.socials.instagram,
+    siteConfig.socials.facebook,
     siteConfig.socials.pinterest,
     siteConfig.socials.youtube,
   ],

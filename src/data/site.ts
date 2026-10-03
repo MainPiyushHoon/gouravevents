@@ -18,9 +18,9 @@ export const siteConfig = {
   url: "https://gouravevents.com",
   founder: "Gourav",
   // Note: To configure the live WhatsApp line, update the phone and whatsappNumber below.
-  phoneDisplay: "+91 98765 43210",
-  whatsappNumber: "919876543210",
-  email: "concierge@gouravevents.com",
+  phoneDisplay: "+91 96678 84377",
+  whatsappNumber: "919667884377",
+  email: "info@gouravevents.com",
   hubs: [
     { city: "Jim Corbett", address: "Dhikala Reserve Corridor, Ramnagar, Uttarakhand" },
     { city: "Jaipur", address: "C-Scheme, Civil Lines, Jaipur, Rajasthan" },
@@ -74,7 +74,8 @@ export const siteConfig = {
     },
   ] as DestinationInfo[],
   socials: {
-    instagram: "https://instagram.com/gouravevents",
+    instagram: "https://www.instagram.com/gouravevents1/",
+    facebook: "https://www.facebook.com/share/1F2rvQbyKi/?mibextid=wwXIfr",
     pinterest: "https://pinterest.com/gouravevents",
     youtube: "https://youtube.com/@gouravevents",
   },

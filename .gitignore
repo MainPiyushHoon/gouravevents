@@ -44,3 +44,6 @@ docs/superpowers/
 
 
 .vercel
+
+# Local moodboard assets cache
+/public/moodboard/
