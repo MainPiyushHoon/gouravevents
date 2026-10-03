@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, ArrowDown, Sparkles } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { FloralDivider, BotanicalWatermark, RoyalBlossomMedallion } from "@/components/ui/FloralMotif";
 
 export default function Hero() {
   const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
@@ -9,15 +10,10 @@ export default function Hero() {
   )}`;
 
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-20 overflow-hidden bg-alabaster">
-      {/* 
-        DIRECTION CONTRACT
-        THESIS: Royal Indian wedding planning treated as an intimate private commission rather than an agency production line.
-        OWN-WORLD: Luminous Alabaster #FAF8F5 ground, Crisp Charcoal #1C1817 type, Deep Burgundy #3E1522 royal accents, Champagne Bronze #8C6843 keylines.
-        STORY: The visitor realizes Gourav Events crafts extraordinary celebrations across India's most evocative palaces and sanctuaries, connecting directly with the founder.
-        FIRST VIEWPORT: Luminous twilight palace scene under warm ivory veil, statuesque serif typography, founder personal badge, direct WhatsApp CTA.
-        FORM: Luxury Light Editorial Monograph with direct founder-led conversion.
-      */}
+    <section className="relative min-h-[94vh] flex items-center justify-center pt-28 pb-20 overflow-hidden bg-alabaster">
+      {/* Subtle Atmospheric Botanical Watermarks to enrich whitespace */}
+      <BotanicalWatermark orientation="left" className="!text-gold/[0.18]" />
+      <BotanicalWatermark orientation="right" className="!text-gold/[0.18]" />
 
       {/* Atmospheric Background Media */}
       <div className="absolute inset-0 z-0">
@@ -37,17 +33,25 @@ export default function Hero() {
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+        {/* Royal Blossom Monogram Medallion */}
+        <RoyalBlossomMedallion className="text-gold" />
+
         {/* Editorial Eyebrow Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-champagne-border/50 bg-white/95 backdrop-blur-md text-[11px] uppercase tracking-[0.3em] text-burgundy mb-8 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-rosegold" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-white/95 backdrop-blur-md text-[11px] uppercase tracking-[0.3em] text-burgundy mb-6 shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-gold" />
           <span className="font-medium">Haute-Couture Wedding Production</span>
         </div>
 
-        {/* Central Thesis Headline */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-charcoal-deep max-w-4xl leading-[1.14] mb-6 drop-shadow-2xs">
+        {/* Central Thesis Headline with Elevated Serif & Script Typography */}
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-light tracking-tight text-charcoal-deep max-w-4xl leading-[1.08] mb-6 drop-shadow-2xs">
           Crafting Extraordinary Weddings Where{" "}
-          <span className="italic font-normal text-burgundy">Royalty</span> Meets{" "}
-          <span className="italic font-normal text-rosegold">Emotion.</span>
+          <span className="font-script text-5xl sm:text-7xl md:text-8xl text-burgundy font-normal not-italic px-1">
+            Royalty
+          </span>{" "}
+          Meets{" "}
+          <span className="font-script text-5xl sm:text-7xl md:text-8xl text-rosegold font-normal not-italic px-1">
+            Emotion.
+          </span>
         </h1>
 
         {/* Supporting Narrative */}
@@ -77,8 +81,11 @@ export default function Hero() {
           </Link>
         </div>
 
+        {/* Subtle Floral Divider to bridge vertical whitespace */}
+        <FloralDivider className="mt-12 mb-4 w-full max-w-md" />
+
         {/* Destination Footnotes */}
-        <div className="mt-14 pt-8 border-t border-champagne-border/40 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs uppercase tracking-[0.25em] text-taupe font-medium">
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-6 sm:gap-12 text-xs uppercase tracking-[0.25em] text-taupe font-medium">
           <span className="hover:text-burgundy transition-colors">Jim Corbett</span>
           <span className="text-rosegold/50">✦</span>
           <span className="hover:text-burgundy transition-colors">Jaipur</span>

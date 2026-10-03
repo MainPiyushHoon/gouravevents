@@ -4,6 +4,13 @@ import Link from "next/link";
 import { MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 import { siteConfig } from "@/data/site";
+import {
+  FloralDivider,
+  FloralCorner,
+  BotanicalWatermark,
+  RoyalBlossomMedallion,
+  FloralSideGutter,
+} from "@/components/ui/FloralMotif";
 
 export const metadata: Metadata = {
   title: "The Four Disciplines of Mastery",
@@ -44,17 +51,23 @@ export default function ServicesPage() {
   )}`;
 
   return (
-    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal relative overflow-hidden">
+      {/* Delicate Side Gutters filling outer whitespace */}
+      <FloralSideGutter side="left" className="top-40" />
+      <FloralSideGutter side="right" className="top-72" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-20 relative">
+          <RoyalBlossomMedallion />
+          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold block">
             Core Disciplines
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-6 font-normal">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-4 font-normal">
             The Art of Curation
           </h1>
-          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
+          <FloralDivider variant="compact" />
+          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed mt-4">
             We reject the fragmented model of ordinary event management. Every wedding we design brings four essential disciplines of craftsmanship under singular founder leadership.
           </p>
         </div>
@@ -67,10 +80,16 @@ export default function ServicesPage() {
               <section
                 key={service.id}
                 id={service.id}
-                className="rounded-3xl border border-taupe-light/60 bg-white p-8 sm:p-12 lg:p-16 shadow-md relative overflow-hidden"
+                className="relative rounded-3xl border border-gold/25 bg-white p-8 sm:p-12 lg:p-16 shadow-md overflow-hidden"
               >
+                <FloralCorner position="top-left" className="!text-gold/80" />
+                <FloralCorner position="bottom-right" className="!text-gold/80" />
+                <BotanicalWatermark
+                  orientation={isReversed ? "left" : "right"}
+                />
+
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center ${
+                  className={`relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center ${
                     isReversed ? "lg:flex-row-reverse" : ""
                   }`}
                 >
@@ -108,6 +127,7 @@ export default function ServicesPage() {
                     <p className="text-xs uppercase tracking-[0.2em] text-burgundy font-medium">
                       {service.tagline}
                     </p>
+                    <FloralDivider variant="compact" className="!my-2 !justify-start" />
                     <p className="text-sm text-charcoal/85 font-light leading-relaxed">
                       {service.description}
                     </p>
@@ -140,14 +160,15 @@ export default function ServicesPage() {
         </div>
 
         {/* Process Timeline Section */}
-        <section className="mb-28">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <section className="mb-28 relative">
+          <div className="text-center max-w-2xl mx-auto mb-16 relative">
+            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold block">
               The Journey
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal-deep mt-2 font-normal">
+            <h2 className="font-serif text-3xl md:text-4xl text-charcoal-deep mt-2 mb-3 font-normal">
               How We Architect Your Celebration
             </h2>
+            <FloralDivider variant="compact" />
             <p className="text-xs text-charcoal-muted mt-3 uppercase tracking-wider">
               Four structured milestones from private brief to standing ovation
             </p>
@@ -157,10 +178,11 @@ export default function ServicesPage() {
             {processPhases.map((phase, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl border border-taupe-light/60 bg-white p-6 md:p-8 flex flex-col justify-between hover:border-burgundy/30 transition-colors shadow-2xs"
+                className="relative rounded-2xl border border-gold/25 bg-white p-6 md:p-8 flex flex-col justify-between hover:border-gold/50 transition-colors shadow-2xs overflow-hidden"
               >
+                <FloralCorner position="top-right" className="!text-gold/75" />
                 <div>
-                  <span className="font-serif text-xs uppercase tracking-[0.2em] text-rosegold font-semibold">
+                  <span className="font-serif text-xs uppercase tracking-[0.2em] text-gold font-semibold">
                     {phase.phase}
                   </span>
                   <h3 className="font-serif text-lg text-charcoal-deep mt-2 mb-3 leading-snug">
@@ -179,33 +201,41 @@ export default function ServicesPage() {
         </section>
 
         {/* Consultation Banner */}
-        <div className="rounded-3xl border border-taupe-light/60 bg-gradient-to-br from-ivory-warm via-white to-alabaster p-10 md:p-16 text-center max-w-4xl mx-auto shadow-sm">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
-            Personal Engagement
-          </span>
-          <h2 className="font-serif text-2xl md:text-4xl text-charcoal-deep mt-2 mb-4 font-normal">
-            Ready to Begin Architectural Planning?
-          </h2>
-          <p className="text-sm text-charcoal-muted font-light max-w-xl mx-auto mb-8 leading-relaxed">
-            Every wedding starts with an exploratory conversation. Reach out directly to Gourav on WhatsApp to discuss your dates and destination.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={directWhatsAppUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-burgundy text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-burgundy-deep transition-all duration-300 shadow-lg shadow-burgundy/15"
-            >
-              <MessageCircle className="w-4 h-4 text-champagne" />
-              <span>Connect on WhatsApp</span>
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-taupe-light text-charcoal-deep text-xs uppercase tracking-[0.2em] hover:text-burgundy hover:border-burgundy transition-colors bg-white shadow-2xs"
-            >
-              <span>View VIP Concierge</span>
-              <ArrowRight className="w-4 h-4 text-rosegold" />
-            </Link>
+        <div className="rounded-3xl border border-gold/30 bg-gradient-to-br from-ivory-warm via-white to-alabaster p-10 md:p-16 text-center max-w-4xl mx-auto shadow-sm relative overflow-hidden">
+          <BotanicalWatermark orientation="right" />
+          <FloralCorner position="top-left" className="!text-gold/80" />
+          <FloralCorner position="top-right" className="!text-gold/80" />
+          <FloralCorner position="bottom-left" className="!text-gold/80" />
+          <FloralCorner position="bottom-right" className="!text-gold/80" />
+          <div className="relative z-10">
+            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold block">
+              Personal Engagement
+            </span>
+            <h2 className="font-serif text-2xl md:text-4xl text-charcoal-deep mt-2 mb-3 font-normal">
+              Ready to Begin Architectural Planning?
+            </h2>
+            <FloralDivider variant="compact" />
+            <p className="text-sm text-charcoal-muted font-light max-w-xl mx-auto mb-8 leading-relaxed">
+              Every wedding starts with an exploratory conversation. Reach out directly to Gourav on WhatsApp to discuss your dates and destination.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={directWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-burgundy text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-burgundy-deep transition-all duration-300 shadow-lg shadow-burgundy/15"
+              >
+                <MessageCircle className="w-4 h-4 text-champagne" />
+                <span>Connect on WhatsApp</span>
+              </a>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-taupe-light text-charcoal-deep text-xs uppercase tracking-[0.2em] hover:text-burgundy hover:border-burgundy transition-colors bg-white shadow-2xs"
+              >
+                <span>View VIP Concierge</span>
+                <ArrowRight className="w-4 h-4 text-rosegold" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

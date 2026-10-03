@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import {
+  FloralDivider,
+  FloralCorner,
+  BotanicalWatermark,
+} from "@/components/ui/FloralMotif";
 
 export default function Footer() {
   const directWhatsAppUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
@@ -8,17 +13,22 @@ export default function Footer() {
   )}`;
 
   return (
-    <footer className="bg-burgundy text-ivory pt-20 pb-12 border-t border-champagne-border/30">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <footer className="bg-burgundy text-ivory pt-20 pb-12 border-t border-champagne-border/30 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Top Callout: Founder Direct Connect Banner */}
-        <div className="rounded-2xl border border-champagne-light/20 bg-burgundy-deep/60 p-8 md:p-12 mb-16 relative overflow-hidden shadow-2xl">
+        <div className="rounded-2xl border border-gold/30 bg-burgundy-deep/60 p-8 md:p-12 mb-16 relative overflow-hidden shadow-2xl">
+          <FloralCorner position="top-left" className="!text-gold-light/75" />
+          <FloralCorner position="bottom-right" className="!text-gold-light/75" />
+          <BotanicalWatermark orientation="right" className="!text-gold-light/25" />
+
           <div className="relative z-10 max-w-2xl">
-            <span className="text-[11px] uppercase tracking-[0.3em] text-champagne-light font-medium">
+            <span className="text-[11px] uppercase tracking-[0.3em] text-gold-light font-medium block">
               Private Commission
             </span>
-            <h3 className="font-serif text-2xl md:text-4xl text-ivory mt-2 mb-4 leading-tight font-normal">
+            <h3 className="font-serif text-2xl md:text-4xl text-ivory mt-2 mb-3 leading-tight font-normal">
               Begin planning your celebration with Gourav.
             </h3>
+            <FloralDivider variant="compact" className="!my-2 !justify-start opacity-75" />
             <p className="text-sm text-ivory/80 leading-relaxed mb-6 font-light">
               Every celebration is personally directed by the founder. Reach out directly on WhatsApp to initiate a private conversation.
             </p>
@@ -151,8 +161,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright and Clean Credits */}
-        <div className="pt-8 border-t border-champagne-light/20 flex flex-col md:flex-row items-center justify-between text-[11px] text-ivory/60 gap-4">
+        <div className="pt-6 border-t border-champagne-light/20 flex flex-col md:flex-row items-center justify-between text-[11px] text-ivory/60 gap-4">
           <p>© {new Date().getFullYear()} Gourav Events. All rights reserved.</p>
+          <FloralDivider variant="compact" className="opacity-75 my-0" />
           <p className="tracking-widest uppercase text-[10px] text-champagne-light/80 font-medium">
             gouravevents.com · Crafted for Extraordinary Celebrations
           </p>

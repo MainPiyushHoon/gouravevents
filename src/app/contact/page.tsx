@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { MessageCircle, Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import ContactForm from "@/components/contact/ContactForm";
+import {
+  FloralDivider,
+  FloralCorner,
+  BotanicalWatermark,
+  RoyalBlossomMedallion,
+  FloralSideGutter,
+} from "@/components/ui/FloralMotif";
 
 export const metadata: Metadata = {
   title: "VIP Concierge & Direct Inquiries",
@@ -15,17 +22,23 @@ export default function ContactPage() {
   )}`;
 
   return (
-    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal relative overflow-hidden">
+      {/* Delicate Side Gutters filling outer whitespace */}
+      <FloralSideGutter side="left" className="top-40" />
+      <FloralSideGutter side="right" className="top-72" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+          <RoyalBlossomMedallion />
+          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold block">
             Personal Engagement
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-6 font-normal">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-4 font-normal">
             VIP Concierge
           </h1>
-          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
+          <FloralDivider variant="compact" />
+          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed mt-4">
             Every conversation begins directly with the founder. Whether you have confirmed your destination or are beginning to explore venues, we invite you to connect.
           </p>
         </div>
@@ -33,11 +46,13 @@ export default function ContactPage() {
         {/* 2-Column Grid: Contact Information & WhatsApp Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
           {/* Left Column: Direct Founder Line & Destination Hubs */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-8 relative">
+            <BotanicalWatermark orientation="left" />
             {/* Direct Line Card */}
-            <div className="rounded-2xl border border-taupe-light/60 bg-white p-8 space-y-6 shadow-sm">
+            <div className="relative rounded-2xl border border-gold/25 bg-white p-8 space-y-6 shadow-sm overflow-hidden">
+              <FloralCorner position="top-right" className="!text-gold/80" />
               <div>
-                <span className="text-[11px] uppercase tracking-[0.25em] text-rosegold font-semibold">
+                <span className="text-[11px] uppercase tracking-[0.25em] text-gold font-semibold">
                   Direct Line
                 </span>
                 <h3 className="font-serif text-2xl text-charcoal-deep mt-1 font-normal">
@@ -46,6 +61,7 @@ export default function ContactPage() {
                 <p className="text-xs text-burgundy font-medium mt-1">
                   Founder & Principal Event Architect
                 </p>
+                <FloralDivider variant="compact" className="!my-2 !justify-start" />
               </div>
 
               <div className="space-y-4 pt-2">
@@ -98,8 +114,9 @@ export default function ContactPage() {
             </div>
 
             {/* Regional Presence Hubs */}
-            <div className="rounded-2xl border border-taupe-light/60 bg-white p-8 space-y-4 shadow-sm">
-              <span className="text-[11px] uppercase tracking-[0.25em] text-rosegold block font-semibold">
+            <div className="relative rounded-2xl border border-gold/25 bg-white p-8 space-y-4 shadow-sm overflow-hidden">
+              <FloralCorner position="top-right" className="!text-gold/75" />
+              <span className="text-[11px] uppercase tracking-[0.25em] text-gold block font-semibold">
                 Destination Presence Hubs
               </span>
               <div className="space-y-3">
@@ -116,7 +133,8 @@ export default function ContactPage() {
             </div>
 
             {/* Private Commission Notice */}
-            <div className="rounded-xl border border-taupe-light/60 bg-ivory-warm/60 p-5 flex items-start gap-3 text-xs text-charcoal-muted font-light">
+            <div className="relative rounded-xl border border-gold/25 bg-ivory-warm/60 p-5 flex items-start gap-3 text-xs text-charcoal-muted font-light overflow-hidden">
+              <FloralCorner position="top-left" className="!text-gold/75" />
               <ShieldCheck className="w-5 h-5 text-burgundy shrink-0 mt-0.5" />
               <p>
                 We limit each calendar year to a selective number of royal commissions to protect uncompromised quality and undivided personal attention.

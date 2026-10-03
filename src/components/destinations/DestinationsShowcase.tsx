@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MessageCircle, MapPin, CheckCircle2, ArrowRight } from "lucide-react";
 import { siteConfig, type DestinationInfo } from "@/data/site";
 import Swup from "swup";
+import { FloralDivider, FloralCorner, BotanicalWatermark } from "@/components/ui/FloralMotif";
 
 export default function DestinationsShowcase() {
   const [activeId, setActiveId] = useState<DestinationInfo["id"]>("corbett");
@@ -87,18 +88,23 @@ export default function DestinationsShowcase() {
 
   return (
     <section id="destinations" className="py-24 bg-ivory-subtle/40 relative overflow-hidden border-t border-champagne-border/30">
+      {/* Background organic watermark */}
+      <BotanicalWatermark orientation="left" />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             Destinations of Distinction
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 mb-6 font-normal">
+          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 mb-4 font-normal">
             Where Your Story Unfolds
           </h2>
           <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
             We focus our artistry on four iconic Indian landscapes. Each offers a completely distinct sensory world, from centuries-old royal palaces to sacred riverbanks and tranquil jungle reserves.
           </p>
+
+          <FloralDivider variant="compact" className="mt-6 max-w-xs mx-auto" />
         </div>
 
         {/* Destination Tab Switcher */}
@@ -112,22 +118,26 @@ export default function DestinationsShowcase() {
                 className={`px-6 py-3 rounded-full text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   isActive
                     ? "bg-burgundy text-ivory font-medium shadow-md shadow-burgundy/20 scale-105"
-                    : "border border-champagne-border/50 text-charcoal/80 hover:border-burgundy hover:text-burgundy bg-white shadow-sm"
+                    : "border border-gold/30 text-charcoal/80 hover:border-gold hover:text-burgundy bg-white shadow-sm"
                 }`}
               >
-                <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-champagne-light" : "text-rosegold"}`} />
+                <MapPin className={`w-3.5 h-3.5 ${isActive ? "text-gold-light" : "text-gold"}`} />
                 <span>{dest.name}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Active Destination Card with Swup Transition Container */}
+        {/* Active Destination Card with Swup Transition Container and Royal Corner Framing */}
         <div
           id="swup-destinations"
           ref={containerRef}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-3xl border border-champagne-border/60 bg-white p-6 sm:p-10 lg:p-14 shadow-xl overflow-hidden"
+          className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center rounded-3xl border border-gold/30 bg-white p-6 sm:p-10 lg:p-14 shadow-xl overflow-hidden"
         >
+          <FloralCorner position="top-left" className="!text-gold/80" />
+          <FloralCorner position="top-right" className="!text-gold/80" />
+          <FloralCorner position="bottom-left" className="!text-gold/80" />
+          <FloralCorner position="bottom-right" className="!text-gold/80" />
           {/* Left Column: Visual Canvas */}
           <div className="lg:col-span-7 transition-fade relative h-[360px] sm:h-[460px] lg:h-[520px] rounded-2xl overflow-hidden border border-champagne-border/40 shadow-lg group">
             <Image

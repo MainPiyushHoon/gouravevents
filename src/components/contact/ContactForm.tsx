@@ -11,6 +11,7 @@ import {
   formatWhatsAppMessage,
 } from "@/lib/validation/inquiry";
 import { siteConfig } from "@/data/site";
+import { FloralCorner } from "@/components/ui/FloralMotif";
 
 export default function ContactForm() {
   const [submittedData, setSubmittedData] = useState<{
@@ -54,7 +55,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="rounded-3xl border border-champagne-border/60 bg-white p-8 sm:p-12 shadow-xl relative">
+    <div className="relative rounded-3xl border border-champagne-border/60 bg-white p-8 sm:p-12 shadow-xl overflow-hidden">
+      <FloralCorner position="top-left" className="opacity-40" />
+      <FloralCorner position="top-right" className="opacity-40" />
+      <FloralCorner position="bottom-left" className="opacity-40" />
+      <FloralCorner position="bottom-right" className="opacity-40" />
       {!submittedData ? (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="border-b border-champagne-border/30 pb-4 mb-6">

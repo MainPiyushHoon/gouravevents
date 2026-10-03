@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, MapPin, Users } from "lucide-react";
 import type { Wedding } from "@/data/weddings";
+import { FloralCorner } from "@/components/ui/FloralMotif";
 
 interface WeddingCardProps {
   wedding: Wedding;
@@ -10,7 +11,9 @@ interface WeddingCardProps {
 
 export default function WeddingCard({ wedding, priority = false }: WeddingCardProps) {
   return (
-    <article className="group relative rounded-2xl overflow-hidden border border-champagne-border/60 bg-white transition-all duration-500 hover:border-burgundy/40 hover:shadow-xl hover:shadow-charcoal/5 flex flex-col">
+    <article className="group relative rounded-2xl overflow-hidden border border-gold/25 bg-white transition-all duration-500 hover:border-gold/60 hover:shadow-xl hover:shadow-charcoal/5 flex flex-col">
+      <FloralCorner position="bottom-left" className="!text-gold/75" />
+      <FloralCorner position="bottom-right" className="!text-gold/75" />
       {/* Visual Media Canvas */}
       <div className="relative aspect-[16/10] overflow-hidden bg-ivory-subtle">
         <Image

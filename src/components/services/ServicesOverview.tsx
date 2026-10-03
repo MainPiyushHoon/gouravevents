@@ -2,22 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { services } from "@/data/services";
+import { FloralDivider, FloralCorner, BotanicalWatermark } from "@/components/ui/FloralMotif";
 
 export default function ServicesOverview() {
   return (
-    <section className="py-24 bg-ivory-subtle/40 border-t border-champagne-border/40 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-24 bg-ivory-subtle/40 border-t border-champagne-border/40 relative overflow-hidden">
+      {/* Background organic watermark */}
+      <BotanicalWatermark orientation="left" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="max-w-3xl mb-14">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             Architectural Precision & Design
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 mb-6 font-normal">
+          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 mb-4 font-normal">
             The Four Disciplines of Mastery
           </h2>
           <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
             Every celebration requires four fundamental pillars of craftsmanship operating in total unison. We don’t outsource vision; we architect each discipline in-house with obsessive precision.
           </p>
+          <FloralDivider variant="compact" className="mt-6 max-w-xs" />
         </div>
 
         {/* Editorial Stacked Layout - Refusing generic icon-box cards */}
@@ -33,10 +38,12 @@ export default function ServicesOverview() {
               >
                 {/* Visual Anchor Column */}
                 <div
-                  className={`lg:col-span-6 relative h-[320px] sm:h-[420px] rounded-2xl overflow-hidden border border-champagne-border/50 shadow-xl group bg-white ${
+                  className={`lg:col-span-6 relative h-[320px] sm:h-[420px] rounded-2xl overflow-hidden border border-gold/30 shadow-xl group bg-white ${
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
+                  <FloralCorner position="top-right" className="!text-gold/80 z-10" />
+                  <FloralCorner position="bottom-left" className="!text-gold/80 z-10" />
                   <Image
                     src={service.image}
                     alt={service.title}

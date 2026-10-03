@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans, Cinzel, Pinyon_Script } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../styles/globals.css";
@@ -8,9 +8,17 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 import { siteConfig } from "@/data/site";
 
-const cinzel = Cinzel({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-display",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
@@ -20,6 +28,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   display: "swap",
   weight: ["300", "400", "500", "600"],
+});
+
+const pinyonScript = Pinyon_Script({
+  subsets: ["latin"],
+  variable: "--font-script",
+  display: "swap",
+  weight: ["400"],
 });
 
 export const viewport: Viewport = {
@@ -113,7 +128,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${plusJakartaSans.variable}`}
+      className={`${cormorant.variable} ${cinzel.variable} ${plusJakartaSans.variable} ${pinyonScript.variable}`}
     >
       <body className="bg-alabaster text-charcoal antialiased min-h-screen flex flex-col font-sans selection:bg-burgundy selection:text-ivory">
         <script

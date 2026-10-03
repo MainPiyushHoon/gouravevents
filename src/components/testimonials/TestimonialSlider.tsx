@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
+import { FloralDivider, FloralCorner, BotanicalWatermark } from "@/components/ui/FloralMotif";
 
 export default function TestimonialSlider() {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -19,20 +20,29 @@ export default function TestimonialSlider() {
 
   return (
     <section className="py-24 bg-alabaster border-t border-champagne-border/40 relative overflow-hidden">
+      {/* Background organic watermark */}
+      <BotanicalWatermark orientation="left" />
+
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="text-center mb-12">
+          <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
             Words of Reverence
           </span>
-          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 font-normal">
+          <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 mb-4 font-normal">
             Voices of Our Couples & Families
           </h2>
+          <FloralDivider variant="compact" className="mt-4 max-w-xs mx-auto" />
         </div>
 
-        {/* Testimonial Feature Card */}
-        <div className="rounded-3xl border border-champagne-border/60 bg-white p-8 sm:p-12 md:p-16 relative shadow-xl">
-          <Quote className="w-12 h-12 text-rosegold/30 mb-8 mx-auto" />
+        {/* Testimonial Feature Card with Royal Corner Flourishes */}
+        <div className="relative rounded-3xl border border-gold/30 bg-white p-8 sm:p-12 md:p-16 shadow-xl">
+          <FloralCorner position="top-left" className="!text-gold/80" />
+          <FloralCorner position="top-right" className="!text-gold/80" />
+          <FloralCorner position="bottom-left" className="!text-gold/80" />
+          <FloralCorner position="bottom-right" className="!text-gold/80" />
+
+          <Quote className="w-12 h-12 text-gold/50 mb-8 mx-auto" />
 
           {/* Emotional Quote */}
           <blockquote className="font-serif text-xl sm:text-2xl md:text-3xl text-charcoal-deep font-normal leading-relaxed text-center mb-10 max-w-3xl mx-auto">

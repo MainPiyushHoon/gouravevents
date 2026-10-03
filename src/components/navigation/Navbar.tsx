@@ -37,7 +37,7 @@ export default function Navbar() {
             href="/"
             className="group flex flex-col items-start transition-opacity hover:opacity-90"
           >
-            <span className="font-serif text-lg md:text-xl tracking-[0.25em] text-burgundy uppercase font-semibold">
+            <span className="font-display text-lg md:text-xl tracking-[0.25em] text-burgundy uppercase font-semibold">
               Gourav Events
             </span>
             <span className="text-[10px] tracking-[0.3em] text-taupe uppercase -mt-0.5 group-hover:text-rosegold transition-colors">

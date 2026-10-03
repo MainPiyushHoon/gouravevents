@@ -3,6 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, MapPin, CheckCircle2, ArrowRight, Calendar, Sparkles } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import {
+  FloralDivider,
+  FloralCorner,
+  BotanicalWatermark,
+  RoyalBlossomMedallion,
+  FloralSideGutter,
+} from "@/components/ui/FloralMotif";
 
 export const metadata: Metadata = {
   title: "Destinations of Distinction — Jim Corbett, Jaipur, Udaipur & Rishikesh",
@@ -107,17 +114,23 @@ const destinationDetails = [
 
 export default function DestinationsPage() {
   return (
-    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <main className="min-h-screen bg-alabaster pt-32 pb-24 text-charcoal relative overflow-hidden">
+      {/* Delicate Side Gutters filling outer whitespace */}
+      <FloralSideGutter side="left" className="top-40" />
+      <FloralSideGutter side="right" className="top-72" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+        <div className="text-center max-w-3xl mx-auto mb-20 relative">
+          <RoyalBlossomMedallion />
+          <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold block">
             Destinations of Distinction
           </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-6 font-normal">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-charcoal-deep mt-3 mb-4 font-normal">
             Four Sacred Landscapes
           </h1>
-          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed">
+          <FloralDivider variant="compact" />
+          <p className="text-sm md:text-base text-charcoal-muted font-light leading-relaxed mt-4">
             We focus our artistry exclusively on four of India&apos;s most storied landscapes.
             Every venue is personally vetted by Gourav, ensuring unmatched heritage architecture, flawless acoustics, and total exclusivity.
           </p>
@@ -134,10 +147,17 @@ export default function DestinationsPage() {
             return (
               <section
                 key={dest.id}
-                className="rounded-3xl border border-champagne-border/60 bg-white p-6 sm:p-10 lg:p-14 shadow-xl overflow-hidden"
+                className="relative rounded-3xl border border-gold/25 bg-white p-6 sm:p-10 lg:p-14 shadow-xl overflow-hidden"
               >
+                {/* Minimalist corner framing and background watermark */}
+                <FloralCorner position="top-left" className="!text-gold/80" />
+                <FloralCorner position="bottom-right" className="!text-gold/80" />
+                <BotanicalWatermark
+                  orientation={isEven ? "left" : "right"}
+                />
+
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center ${
+                  className={`relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center ${
                     isEven ? "lg:flex-row-reverse" : ""
                   }`}
                 >
@@ -179,9 +199,10 @@ export default function DestinationsPage() {
                       <h2 className="font-serif text-3xl sm:text-4xl text-burgundy font-normal mb-1">
                         {dest.name}
                       </h2>
-                      <p className="text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-4">
+                      <p className="text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-2">
                         {dest.title}
                       </p>
+                      <FloralDivider variant="compact" className="!my-2 !justify-start" />
                       <p className="text-sm text-charcoal-muted leading-relaxed font-light mb-6">
                         {dest.description}
                       </p>
@@ -254,15 +275,19 @@ export default function DestinationsPage() {
         </div>
 
         {/* Closing Callout: Private Commission */}
-        <div className="mt-24 rounded-3xl border border-champagne-border/60 bg-gradient-to-br from-burgundy via-burgundy-deep to-charcoal-deep text-ivory p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+        <div className="mt-24 rounded-3xl border border-gold/30 bg-gradient-to-br from-burgundy via-burgundy-deep to-charcoal-deep text-ivory p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <FloralCorner position="top-left" className="!text-gold-light/75" />
+          <FloralCorner position="bottom-right" className="!text-gold-light/75" />
+          <BotanicalWatermark orientation="left" className="!text-gold-light/25" />
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-champagne-light font-medium">
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-gold-light font-medium">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Personal Founder Oversight</span>
             </span>
             <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight">
               Begin Curating Your Sacred Landscape
             </h3>
+            <FloralDivider variant="compact" />
             <p className="text-sm md:text-base text-ivory/80 font-light leading-relaxed">
               Every couple receives Gourav&apos;s direct attention from venue inspection to twilight pheras.
               Share your preferred destination and guest vision to begin a private consultation.

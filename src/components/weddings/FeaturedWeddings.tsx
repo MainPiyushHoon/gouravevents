@@ -2,15 +2,19 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { weddings } from "@/data/weddings";
 import WeddingCard from "./WeddingCard";
+import { FloralDivider, BotanicalWatermark } from "@/components/ui/FloralMotif";
 
 export default function FeaturedWeddings() {
   return (
-    <section className="py-24 bg-alabaster relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-24 bg-alabaster relative overflow-hidden">
+      {/* Delicate background watermark to reduce wide side margin whitespace */}
+      <BotanicalWatermark orientation="right" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.3em] text-rosegold font-semibold">
+            <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
               Curated Chronicles
             </span>
             <h2 className="font-serif text-3xl md:text-5xl text-charcoal-deep mt-3 font-normal">
@@ -29,6 +33,9 @@ export default function FeaturedWeddings() {
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
+
+        {/* Elegant floral divider to separate header from grid */}
+        <FloralDivider variant="compact" className="mb-14 max-w-sm mx-auto" />
 
         {/* 2-Column Luxury Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">

@@ -29,6 +29,14 @@ const config: Config = {
           subtle: "#F7EDF0",
           card: "rgba(62, 21, 34, 0.04)",
         },
+        gold: {
+          DEFAULT: "#B88E3E", // Rich royal antique wedding gold
+          warm: "#C59B4B",
+          light: "#E2C889",
+          deep: "#8F6B25",
+          subtle: "rgba(184, 142, 62, 0.16)",
+          border: "#D8BC7E",
+        },
         rosegold: {
           DEFAULT: "#9E5460", // Restrained luxury metallic
           muted: "#D8B4BA",
@@ -48,8 +56,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Cinzel", "serif"],
+        serif: ["var(--font-serif)", "Cormorant Garamond", "serif"],
+        display: ["var(--font-display)", "Cinzel", "serif"],
         sans: ["var(--font-sans)", "Plus Jakarta Sans", "sans-serif"],
+        script: ["var(--font-script)", "Pinyon Script", "cursive"],
       },
     },
   },
