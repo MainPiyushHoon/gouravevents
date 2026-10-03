@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../styles/globals.css";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 import Navbar from "@/components/navigation/Navbar";
@@ -43,6 +45,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Gourav Events", url: siteConfig.url }],
   creator: "Gourav Events",
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -64,6 +76,35 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteConfig.name,
+  image: `${siteConfig.url}/opengraph-image`,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  telephone: siteConfig.phoneDisplay,
+  priceRange: "$$$$",
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Jaipur" },
+    { "@type": "AdministrativeArea", name: "Udaipur" },
+    { "@type": "AdministrativeArea", name: "Jim Corbett" },
+    { "@type": "AdministrativeArea", name: "Rishikesh" },
+    { "@type": "Country", name: "India" },
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Jaipur",
+    addressRegion: "Rajasthan",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    siteConfig.socials.instagram,
+    siteConfig.socials.pinterest,
+    siteConfig.socials.youtube,
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,11 +116,17 @@ export default function RootLayout({
       className={`${cinzel.variable} ${plusJakartaSans.variable}`}
     >
       <body className="bg-alabaster text-charcoal antialiased min-h-screen flex flex-col font-sans selection:bg-burgundy selection:text-ivory">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll>
           <Navbar />
           <div className="flex-grow">{children}</div>
           <Footer />
         </SmoothScroll>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
